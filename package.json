@@ -2,17 +2,54 @@
   "name": "smallinvisiblemachines",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "1.1.4"
-  },
   "dependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "boom": "^7.2.0",
+    "bootstrap": "^4.1.2",
+    "chalk": "^2.4.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "clear": "^0.1.0",
+    "file-loader": "^1.1.11",
+    "font-awesome": "^4.7.0",
+    "font-awesome-webpack": "0.0.5-beta.2",
+    "glue": "^5.0.0",
+    "gmail-send": "^1.2.14",
+    "hapi": "^17.5.2",
+    "history": "^4.7.2",
+    "hoek": "^5.0.3",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "inert": "^5.1.0",
+    "joi": "^13.4.0",
+    "jquery": "^3.3.1",
+    "lout": "^11.0.1",
+    "moment": "^2.22.2",
+    "popper.js": "^1.14.3",
+    "postcss-loader": "^2.1.6",
+    "precss": "^3.1.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "vision": "^5.3.3",
+    "webpack": "^4.16.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "watch": "webpack --progress --watch",
+    "start": "babel-node server/index.js --presets env,react,stage-0"
+  },
+  "engines": {
+    "node": "8.11.1"
   }
 }
