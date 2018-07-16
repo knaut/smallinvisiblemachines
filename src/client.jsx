@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { renderRoutes } from 'react-router-config';
 
-// import generateStore from './utils/generateStore.js';
+import generateStore from './utils/generateStore.js';
 
 import { applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
