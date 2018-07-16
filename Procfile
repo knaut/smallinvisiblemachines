@@ -1,0 +1,1 @@
+web: babel-node server/index.js --presets env,react,stage-0
