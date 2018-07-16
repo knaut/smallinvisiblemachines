@@ -17,7 +17,7 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 
 // CONFIG
-// import routes from './routes.js';
+import routes from './routes.js';
 
 // loads all of bootstrap's js into the client bundle
 // https://getbootstrap.com/docs/4.0/getting-started/webpack/
@@ -27,23 +27,19 @@ const store = generateStore(
   applyMiddleware(
     promise(),
     thunk,
-    // createLogger({
-    //   predicate: (getState, action) => action.type !== 'CLOCK_TICK',
-    // })
+    createLogger({
+      predicate: (getState, action) => action.type !== 'CLOCK_TICK',
+    })
   )
 );
 
 const Client = () => {
-  /*
+  return (
     <Provider store={store}>
       <BrowserRouter>
         {renderRoutes(routes)}
       </BrowserRouter>
     </Provider>
-  */
-
-  return (
-    <div>Small Invisible Machines</div>
   );
 }
 
