@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
           <a className="navbar-brand" href="#">Small Invisible Machines</a>
           <button
@@ -42,6 +42,11 @@ const Home = () => {
           </div>
         </div>
       </nav>
+
+      <div className="jumbotron">
+        <h1 className="display-4">Coming soon.</h1>
+        <p className="lead">Check back here soon for more info on Small Invisible Machines.</p>
+      </div>
 
     </div>
   );
