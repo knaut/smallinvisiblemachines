@@ -51,6 +51,7 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "sass-webpack-plugin": "^0.3.3",
+    "startbootstrap-full-width-pics": "^4.1.1",
     "style-loader": "^0.18.2",
     "vision": "^5.x.x",
     "webpack": "3.4.1",
