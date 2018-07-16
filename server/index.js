@@ -24,10 +24,10 @@ const manifest = {
       Lout,
 
       // STATIC ASSETS
-      // './routes/assets.js',
+      './routes/assets.js',
 
       // STATIC PAGE ROUTES
-      // './routes/index.js'
+      './routes/index.js'
     ]
   }
 }
@@ -44,7 +44,7 @@ const startServer = async function() {
 
     clear();
     console.log(
-      chalk.bgWhite.bold.black(` SMALL INVISIBLE MACHINES `),
+      chalk.bold(` SMALL INVISIBLE MACHINES `),
       chalk.gray('server started at'),
       chalk.green(`${server.info.protocol}://${server.info.address}:${server.info.port}`),
       chalk.gray(`on`),

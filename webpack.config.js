@@ -6,7 +6,7 @@ const ProvidePlugin = require('webpack-provide-global-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/client.js',
+  entry: './src/client.jsx',
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin([
