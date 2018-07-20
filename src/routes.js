@@ -1,8 +1,8 @@
 // COMPONENTS
-import App from './components/app.js';
+import App from './components/app.jsx';
 
 // PAGES
-import Home from './pages/home.js';
+import Home from './pages/home.jsx';
 
 const Routes = [
   {
