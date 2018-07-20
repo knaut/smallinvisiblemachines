@@ -4,3 +4,36 @@
 // DEPENDENCIES
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/startbootstrap-full-width-pics/css/full-width-pics.css";
+
+
+
+// GLOBALS
+
+.sim-text-blue {
+  color: $blue;
+}
+
+.sim-text-cyan {
+  color: $cyan;
+}
+
+.sim-text-yellow {
+  color: $yellow;
+}
+
+.sim-text-orange {
+  color: $orange;
+}
+
+.sim-text-pink {
+  color: $pink;
+}
+
+
+// PAGES
+#home {
+  #hero {
+    // background: url('/images/differenceEngine_blurred_bg.jpg') no-repeat center;
+    // background-size: cover;
+  }
+}

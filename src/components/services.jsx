@@ -45,7 +45,7 @@ class Services extends React.Component {
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-lg-3">
             <h6 className="text-center text-uppercase text-info">End-to-end Javascript Development</h6>
-            <h6 className="text-center text-success">
+            <h6 className="text-center sim-text-blue">
               <FontAwesomeIcon icon={["fab", "node-js"]} size="6x" />
             </h6>
             <p className="text-center text-muted"></p>
@@ -54,21 +54,21 @@ class Services extends React.Component {
           </div>
           <div className="col-xs-12 col-sm-6 col-lg-3">
             <h6 className="text-center text-uppercase text-info">Pixel-perfect User Experience</h6>
-            <h6 className="text-center text-warning">
+            <h6 className="text-center sim-text-yellow">
               <FontAwesomeIcon icon={["fas", "object-group"]} size="6x" />
             </h6>
             <p className="text-center text-muted">Custom-tailored user interface design that is expressive yet simple.</p>
           </div>
           <div className="col-xs-12 col-sm-6 col-lg-3">
             <h6 className="text-center text-uppercase text-info">Cloud Deployment & Management</h6>
-            <h6 className="text-center text-danger">
+            <h6 className="text-center sim-text-pink">
               <FontAwesomeIcon icon={["fas", "cloud"]} size="6x" />
             </h6>
             <p className="text-center text-muted">Go live in minutes, not days. Scale with ease as you grow.</p>
           </div>
           <div className="col-xs-12 col-sm-6 col-lg-3">
             <h6 className="text-center text-uppercase text-info">Integrate The World of Things</h6>
-            <h6 className="text-center text-primary">
+            <h6 className="text-center sim-text-cyan">
               <FontAwesomeIcon icon={["fas", "mobile-alt"]} size="6x" />
             </h6>
             <p className="text-center text-muted">Program your app to send a text message or get data from a sensor in real time.</p>

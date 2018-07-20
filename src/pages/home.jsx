@@ -39,14 +39,14 @@ library.add(
 
 const Home = () => {
   return (
-    <div>
-      <Navigation />      
-      <div className="jumbotron">
+    <div id="home">
+       
+      <div id="hero" className="jumbotron">
         <AboutSim />
       </div>
       <Services />
       <AboutDaniel/>
-      <Footer />
+
     </div>
   );
 };
