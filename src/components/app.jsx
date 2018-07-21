@@ -55,12 +55,7 @@ class Spinner extends React.Component {
     console.log(spinnerClasses)
     return (
       <div>
-        <table className={spinnerClasses} style={{
-          height: '100%',
-          position: 'absolute',
-          width: '100%',
-          background: '#fff'
-        }}>
+        <table className={spinnerClasses}>
           <tbody>
             <tr>
               <td className="align-middle text-center">
