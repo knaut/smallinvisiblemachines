@@ -19,10 +19,11 @@ export default function renderHead( html, preloadedState ) {
         <style type="text/css">
           .spinner-wrap {
             height: 100%;
-            position: absolute;
+            position: fixed;
+            top: 0;
             width: 100%;
             background: #fff;
-            z-index: 10;
+            z-index: 100;
             opacity: 1;
             transition: 0.5s opacity ease-in-out;
           }
