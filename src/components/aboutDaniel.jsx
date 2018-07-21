@@ -100,15 +100,15 @@ class AboutDaniel extends React.Component {
             </div>
             <div className="col-lg-7 col-sm-12 text-center text-lg-left">
               <hr/>
-              <a href="mailto:daniel@smallinvisiblemachines.com" className="sim-icon pdf">
+              <a href="/files/Resume_DanielAnderson_2017.pdf" className="sim-icon pdf">
                 <FontAwesomeIcon icon="file-pdf" size="2x"/>
                 <FontAwesomeIcon icon="circle" size="3x"/>
               </a>
-              <a href="mailto:daniel@smallinvisiblemachines.com" className="sim-icon word">
+              <a href="/files/Resume_DanielAnderson_2017.docx" className="sim-icon word">
                 <FontAwesomeIcon icon="file-word" size="2x"/>
                 <FontAwesomeIcon icon="circle" size="3x"/>
               </a>
-              <a href="mailto:daniel@smallinvisiblemachines.com" className="sim-icon txt">
+              <a href="/files/Resume_DanielAnderson_2017.txt" className="sim-icon txt">
                 <FontAwesomeIcon icon="file-alt" size="2x"/>
                 <FontAwesomeIcon icon="circle" size="3x"/>
               </a>

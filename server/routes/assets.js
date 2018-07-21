@@ -90,14 +90,14 @@ exports.plugin = {
 
     server.route({
       method: 'GET',
-      path: '/epub/{param*}',
+      path: '/files/{param*}',
       options: {
         plugins: {
           lout: false
         },
         handler: {
           directory: {
-            path: 'public/epub',
+            path: 'public/files',
             index: ['index.html']
           }
         }
