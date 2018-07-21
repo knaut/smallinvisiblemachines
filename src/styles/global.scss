@@ -8,6 +8,12 @@
 
 
 // GLOBALS
+.sim-title {
+  font-family: 'Syncopate', sans-serif;
+  &.bold {
+    font-weight: 600;
+  }
+}
 
 .sim-text-blue {
   color: $blue;
@@ -29,11 +35,208 @@
   color: $pink;
 }
 
+.sim-text-purple {
+  color: $purple;
+}
+
+.sim-text-gray-dark {
+  color: $grayDark;
+}
+
+.sim-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  text-align: left;
+  & + .sim-icon {
+    margin-left: 5px;
+  }
+
+  & > svg {
+    position: absolute;
+    // icons
+    &:nth-child(1) {
+      color: white;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      margin-left: -12px;
+      margin-top: -12px;
+    }
+    &:nth-child(2) {
+      
+    }
+  }
+
+  &.pdf {
+    & > svg {
+      &:nth-child(1) {
+        color: $pink;
+        margin-left: -12px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $grayDark;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: #fff;
+        }
+        &:nth-child(2) {
+          color: $pink;
+        }
+      }
+    }
+  }
+
+  &.word {
+    & > svg {
+      &:nth-child(1) {
+        color: $cyan;
+        margin-left: -12px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $grayDark;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: #fff;
+        }
+        &:nth-child(2) {
+          color: $cyan;
+        }
+      }
+    }
+  }
+
+  &.txt {
+    & > svg {
+      &:nth-child(1) {
+        color: #fff;
+        margin-left: -12px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $grayDark;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: $grayDark;
+        }
+        &:nth-child(2) {
+          color: $grayLight;
+        }
+      }
+    }
+  }
+
+  &.github {
+    & > svg {
+      &:nth-child(1) {
+        color: #fff;
+        margin-left: -16px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $grayDark;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: $grayDark;
+        }
+        &:nth-child(2) {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.linkedin {
+    & > svg {
+      &:nth-child(1) {
+        color: #fff;
+        margin-left: -15px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $blue;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: $blue;
+        }
+        &:nth-child(2) {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.twitter {
+    & > svg {
+      &:nth-child(1) {
+        color: #fff;
+        margin-left: -16px;
+        margin-top: -16px;
+      }
+      &:nth-child(2) {
+        color: $cyan;
+      }
+    }
+    &:link > svg {
+      transition: 0.3s all ease-in-out;
+    }
+    &:hover {
+      & > svg {
+
+        &:nth-child(1) {
+          color: $cyan;
+        }
+        &:nth-child(2) {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
 
 // PAGES
 #home {
   #hero {
-    // background: url('/images/differenceEngine_blurred_bg.jpg') no-repeat center;
-    // background-size: cover;
+    background: url('/images/differenceEngine_blurred_bg.jpg') no-repeat center;
+    background-size: cover;
   }
 }

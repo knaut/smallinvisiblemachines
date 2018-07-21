@@ -11,7 +11,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
         {renderRoutes(this.props.route.routes)}
         <Footer />
       </div>

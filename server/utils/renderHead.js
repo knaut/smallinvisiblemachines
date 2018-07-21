@@ -19,6 +19,7 @@ export default function renderHead( html, preloadedState ) {
         ${ HeadConfig.extStylesheets ? '<link rel="stylesheet" type="text/css" href="' + HeadConfig.extStylesheets + '">' : ''}
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Syncopate:400,700" rel="stylesheet">
       </head>
       <body>
         <div id="page-top" data-spy="scroll" data-target=".navbar-collapse">${ html }</div>
