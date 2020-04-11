@@ -52,7 +52,7 @@ class Spinner extends React.Component {
     if (this.state.hidden) {
       spinnerClasses = spinnerClasses + ' hidden';
     }
-    console.log(spinnerClasses)
+    
     return (
       <div>
         <table className={spinnerClasses}>
