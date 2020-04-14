@@ -3,11 +3,11 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "start": "npx webpack-dev-server --config webpack.local.js"
+    "start": "npx webpack-dev-server --config webpack.local.js",
+    "storybook": "npx start-storybook -p 6006"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
-    "@storybook/react": "^5.3.18",
     "grommet": "^2.12.0",
     "grommet-icons": "^4.4.0",
     "moment": "^2.24.0",
@@ -20,6 +20,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
+    "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
