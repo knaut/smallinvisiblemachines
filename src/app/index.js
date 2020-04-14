@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+// COMPONENTS
+import Theme from './components/Theme'
+
 class App extends Component {
 	render() {
 		return (
-			<div>SIM</div>
+			<Theme>
+				<div>SIM</div>				
+			</Theme>
 		)
 	}
 }
