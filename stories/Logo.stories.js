@@ -9,7 +9,7 @@ import {
 } from 'grommet'
 
 import Theme from '../src/app/components/Theme'
-import { Logo } from '../src/app/components/Logo'
+import Logo from '../src/app/components/Logo'
 
 // STYLES
 import { sim } from '../src/app/components/Theme'

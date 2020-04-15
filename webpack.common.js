@@ -28,8 +28,10 @@ module.exports = {
 					options: {
 						presets: [
 							'@babel/preset-env',
-							'@babel/preset-react',
-							'@emotion/babel-preset-css-prop'
+							'@babel/preset-react'
+						],
+						plugins: [
+							'babel-plugin-styled-components'
 						]
 					}
 				}

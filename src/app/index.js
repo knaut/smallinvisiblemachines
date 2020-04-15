@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import Theme, { sim } from './components/Theme'
 import Layout from './components/Layout'
 import Logo from './components/Logo'
+import Avatar from './components/Avatar'
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					arrangement={3}
 					color={sim.global.colors.neutralDarkGray}
 				/>
+				<Avatar size='200px'/>
 			</Layout>
 		</Theme>
 	)

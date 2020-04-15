@@ -25,6 +25,7 @@
     "@emotion/styled": "^10.0.27",
     "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",

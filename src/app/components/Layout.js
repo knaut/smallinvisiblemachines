@@ -13,7 +13,7 @@ export default function Layout({ children, color }) {
 			pad='medium'
 			fill
 		>
-				{children}
+			{children}
 		</Box>
 	)
 }
