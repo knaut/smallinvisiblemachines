@@ -30,7 +30,7 @@ const darkGreen = '#1e6e3a'
 const darkBlue = '#0f5159'
 const darkPurple = '#3d2975'
 
-export const simTheme = deepMerge(grommetTheme, {
+export const sim = deepMerge(grommetTheme, {
 	global: {
 		// font: {
 		// 	family: 'Acumin, Helvetica Neue, Helvetica, Arial, sans-serif'
@@ -63,7 +63,7 @@ const SimTheme = ({ children }) => (
 	<Grommet
 		full
 		cssVars
-		theme={simTheme}
+		theme={sim}
 	>
 		{children}
 	</Grommet>
