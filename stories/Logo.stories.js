@@ -15,8 +15,33 @@ import { Logo } from '../src/app/components/Logo'
 import { sim } from '../src/app/components/Theme'
 
 storiesOf('Logo', module)
-	.add('Logotype', () => (
+	.add('Arrangement1', () => (
 		<Theme>
 			<Logo color={sim.global.colors.neutralDarkGray}/>
+		</Theme>
+	))
+	.add('Arrangement2', () => (
+		<Theme>
+			<Logo 
+				arrangement={2}
+				color={sim.global.colors.neutralDarkGray}
+			/>
+		</Theme>
+	))
+
+	.add('Arrangement3', () => (
+		<Theme>
+			<Logo 
+				arrangement={3}
+				color={sim.global.colors.neutralDarkGray}
+			/>
+		</Theme>
+	))
+	.add('Logotype', () => (
+		<Theme>
+			<Logo 
+				arrangement={'logotype'}
+				color={sim.global.colors.neutralDarkGray}
+			/>
 		</Theme>
 	))
