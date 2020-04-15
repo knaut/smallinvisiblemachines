@@ -32,7 +32,7 @@ const Logotype = ({ color }) => (
 	</svg>
 )
 
-export const Logo = ({ color, arrangement }) => {
+export default function Logo({ color, arrangement }) {
 	switch(arrangement) {
 		default: {
 			return <Arrangement1 color={color}/>
@@ -41,7 +41,7 @@ export const Logo = ({ color, arrangement }) => {
 			return <Arrangement2 color={color}/>
 		}
 		case 3: {
-			return <div style={{width: '100%'}}><Arrangement3 color={color}/></div>
+			return <Arrangement3 color={color}/>
 		}
 		case 'logotype': {
 			return <Logotype color={color}/>
