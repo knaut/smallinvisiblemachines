@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 // COMPONENTS
+import { Heading } from 'grommet'
 import Theme, { sim } from './components/Theme'
 import Layout from './components/Layout'
 import Logo from './components/Logo'
 import Avatar from './components/Avatar'
+import Greeting from './components/Greeting'
 
 function App() {
 	return (
@@ -16,6 +18,7 @@ function App() {
 					color={sim.global.colors.neutralDarkGray}
 				/>
 				<Avatar size='200px'/>
+				<Greeting/>
 			</Layout>
 		</Theme>
 	)
