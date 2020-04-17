@@ -4,9 +4,6 @@ import React, { Component } from 'react'
 import { Heading } from 'grommet'
 import Theme, { sim } from './Theme'
 
-// STYLES
-import css from '@emotion/css'
-
 export default function Greeting() {
 	const skills = [
 		'progressive web apps',

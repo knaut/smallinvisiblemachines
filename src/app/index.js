@@ -8,6 +8,7 @@ import Layout from './components/Layout'
 import Logo from './components/Logo'
 import Avatar from './components/Avatar'
 import Greeting from './components/Greeting'
+import CTAs from './components/CTAs'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				/>
 				<Avatar size='200px'/>
 				<Greeting/>
+				<CTAs/>
 			</Layout>
 		</Theme>
 	)
