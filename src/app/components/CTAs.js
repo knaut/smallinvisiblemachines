@@ -4,29 +4,53 @@ import React, { Component } from 'react'
 import { MailOption, Clipboard, Github } from 'grommet-icons'
 import { Box, Text } from 'grommet'
 import Theme, { sim } from './Theme'
-import CTAButton from './CTAButton'
+
+function CallToAction({ icon, headline, subline }) {
+ 	return(
+		<Box direction='row' margin='xsmall'>
+			<Box
+				alignSelf='start'
+				background='black'
+				margin={{right: 'small'}}
+				pad='small'
+				round='full'
+			>
+				{ icon }
+			</Box>
+			<Box alignSelf='center'>
+				<Text>
+					<Text weight='bold'  size='xxlarge'>{headline}</Text>
+					<Text size='xxlarge'>{subline}</Text>
+				</Text>
+			</Box>
+		</Box> 
+ 	)
+}
 
 export default function CTAs() {
 	return (
 		<Box>
-			<Box direction='row'>
-				<CTAButton icon={
+			<CallToAction 
+				icon={
 					<MailOption/>
-				}/>
-				<Text size='xxlarge'><Text size='xxlarge' weight='bolder'>email</Text> me to get in touch,</Text>
-			</Box>
-			<Box direction='row'>
-				<CTAButton icon={
+				}
+				headline='email'
+				subline='&nbsp;me to get in touch,'
+			/>
+			<CallToAction 
+				icon={
 					<Clipboard/>
-				}/>
-				<Text size='xxlarge'><Text size='xxlarge' weight='bolder'>read my resume</Text>,</Text>
-			</Box>
-			<Box direction='row'>
-				<CTAButton icon={
+				}
+				headline='read my resume'
+				subline=','
+			/>
+			<CallToAction 
+				icon={
 					<Github/>
-				}/>
-				<Text size='xxlarge'><Text size='xxlarge' weight='bolder'>check my github</Text> to see work samples.</Text>
-			</Box>
+				}
+				headline='check my github'
+				subline='&nbsp;to see work samples.'
+			/>
 		</Box>
 	)
 }
