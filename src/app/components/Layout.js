@@ -11,7 +11,6 @@ export default function Layout({ children, color }) {
 		<Box
 			background={color}
 			pad='medium'
-			fill
 		>
 			{children}
 		</Box>

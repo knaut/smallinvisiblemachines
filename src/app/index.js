@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 // COMPONENTS
-import { Heading } from 'grommet'
+import { Heading, Box } from 'grommet'
 import Theme, { sim } from './components/Theme'
 import Layout from './components/Layout'
 import Logo from './components/Logo'
@@ -14,12 +14,15 @@ function App() {
 	return (
 		<Theme>
 			<Layout color={sim.global.colors.neutralLight}>
-				<Logo 
-					arrangement={3}
-					color={sim.global.colors.neutralDarkGray}
-				/>
-				<Avatar size='200px'/>
-				<Greeting/>
+				<Box width='large'>
+					<Logo 
+						arrangement={3}
+						color={sim.global.colors.neutralDarkGray}
+					/>
+				</Box>
+				<Box width='large'>
+					<Greeting/>
+				</Box>
 				<CTAs/>
 			</Layout>
 		</Theme>
