@@ -2,7 +2,7 @@
 import React from 'react'
 
 // COMPONENTS
-import { Box, Avatar } from 'grommet'
+import { Box, Avatar, Image } from 'grommet'
 
 // STATIC
 import daniel from '../../../static/daniel.jpg'
@@ -18,12 +18,16 @@ export default function MyAvatar({ size }) {
 				color: sim.global.colors.primaryBlue,
 				size: 'medium'
 			}}
-			width={{ max: size }}
-			height={{ max: size }}
+			flex='shrink'
+			width={{ max: size ? size : 'small' }}
+			height={{ max: size ? size : 'small' }}
+			css={`
+				overflow: hidden;
+			`}
 		>
-			<Avatar 
+			<Image
+				fit='cover' 
 				src={daniel}
-				size={size}
 			/>
 		</Box>
 	)
