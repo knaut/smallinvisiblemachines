@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Heading, Box } from 'grommet'
 import Theme, { sim } from './Theme'
 import Avatar from './Avatar'
+import SkillRotator from './SkillRotator'
 
 export default function Greeting() {
 	const skills = [
@@ -50,7 +51,9 @@ export default function Greeting() {
 				}}
 			>
 				<span css={`font-style: italic;`}>I do... </span>
-				<span css={`font-weight: 800;`}>{skills[Math.floor(Math.random() * skills.length)]}.</span>
+				<span css={`font-weight: 800;`}>
+					<SkillRotator/>
+				</span>
 			</Heading>
 		</Box>
 	)

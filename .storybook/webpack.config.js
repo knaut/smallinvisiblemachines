@@ -1,3 +1,5 @@
+const babelConfig = require('../babel-config.js')
+
 module.exports = {
 	plugins: [
 
@@ -9,15 +11,7 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
-					options: {
-						presets: [
-							'@babel/preset-env',
-							'@babel/preset-react'
-						],
-						plugins: [
-							'babel-plugin-styled-components'
-						]
-					}
+					options: babelConfig
 				}
 			},
 			{
