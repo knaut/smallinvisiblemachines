@@ -4,6 +4,22 @@ import React, { Component, Fragment } from 'react'
 import { Heading, Box } from 'grommet'
 import Theme, { sim } from './Theme'
 
+const skills = [
+	'front-end development',
+	'progressive web apps',
+	'user experience design',
+	'server-side development',
+	'command line tools',
+	'Javascript',
+	'ReactJS',
+	'NodeJS',
+	'HTML5 & CSS3',
+	'cloud architecture',
+	'databases',
+	'responsive web apps',
+	'internet-of-things'
+]
+
 class Skill extends Component {
 	state = {
 		active: this.props.active,
@@ -19,7 +35,7 @@ class Skill extends Component {
 
 		return (
 			<span css={`
-				opacity: ${active ? '1' : '0' };
+				opacity: ${active ? '1' : '.5' };
 				filter: blur(${entering ? '10px' : '0'});
 				transition: all 0.7s ease-in-out;
 			`}>
@@ -31,68 +47,71 @@ class Skill extends Component {
 
 export default class SkillRotator extends Component {
 	state = {
-		skills: [
-			'progressive web apps',
-			'user experience design',
-			'front-end development',
-			'server-side development',
-			'command line tools',
-			'Javascript',
-			'ReactJS',
-			'NodeJS',
-			'HTML5 & CSS3',
-			'cloud architecture',
-			'databases',
-			'responsive web apps',
-			'internet-of-things'
-		],
+		skills,
 		interval: null,
-		index: 0
+		active: 0,
+		cache: [0]
 	}
 
 	componentDidMount() {
 		const skillsLength = this.state.skills.length
 
 		this.state.interval = setInterval(() => {
- // 			const index = Math.floor(Math.random() * skillsLength)
- // 
- // 			this.setState({
- // 				index
- // 			})
 
+			this.randomSkill()
 
-			const index = this.rotateIndex()
-
-			this.setState({
-				index
-			})
-
-
-			console.log(this.state)
 		}, 3000)
 	}
 
-	rotateIndex() {
+	// pick a random number that isn't already in our cache
+	randomIndex( cache ) {
+		const random = Math.floor(Math.random() * skills.length)
+
+		if (!cache) {
+			return random
+		} else {
+			if (cache.indexOf(random) > -1) {
+				return this.randomIndex(cache)
+			} else {
+				return random
+			}
+		}
+	}
+
+	// pick a random skill from our list without repeats
+	randomSkill() {
 		const { 
-			index, 
-			skills
+			cache,
+			active,
+			entering
 		} = this.state
 
-		let nextIndex = index + 1
+		const random = this.randomIndex(cache)
 
-		if (nextIndex > skills.length) {
-			nextIndex = 0
+		cache.push(random)
+
+		if (cache.length === 5) {
+			cache.shift()
 		}
 
-		return nextIndex
+		this.setState({
+			cache,
+			active: random
+		})
+
 	}
 
 	render() {
-		const { skills, index } = this.state
+		const { 
+			skills, 
+			active,
+			entering
+		} = this.state
 
 		return (
 			<span>
-				{skills[index]}
+				<Skill active>{skills[active]}</Skill>
+				<Skill entering>{skills[entering]}</Skill>
 			</span>
 		)
 	}
