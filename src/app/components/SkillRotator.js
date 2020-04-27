@@ -35,30 +35,52 @@ function randomSkillIndex( cache ) {
 		}
 	}
 }
+// 
+// class Skill extends Component {
+// 	state = {
+// 		active: this.props.active,
+// 		entering: this.props.entering
+// 	}
+// 
+// 	render() {
+// 		const { children } = this.props
+// 		const {
+// 			active,
+// 			entering
+// 		} = this.state
+// 
+// 		return (
+// 			<span css={`
+// 				opacity: ${active ? '1' : '.5' };
+// 				filter: blur(${entering ? '2px' : '0'});
+// 				transition: all 0.7s ease-in-out;
+// 			`}>
+// 				{children}
+// 			</span>
+// 		)
+// 	}
+// }
 
-class Skill extends Component {
-	state = {
-		active: this.props.active,
-		entering: this.props.entering
-	}
+export function Skill({
+	active,
+	entering,
+	exiting,
+	children
+}) {
+	const opacity = active ? 1 : 0
+	// const transition = `transition: all 0.7s ease-in-out;`
+	const blur = entering || exiting ? '10px' : 0
 
-	render() {
-		const { children } = this.props
-		const {
-			active,
-			entering
-		} = this.state
 
-		return (
-			<span css={`
-				opacity: ${active ? '1' : '.5' };
-				filter: blur(${entering ? '2px' : '0'});
-				transition: all 0.7s ease-in-out;
-			`}>
-				{children}
-			</span>
-		)
-	}
+	return (
+		<span css={`
+			transition: all 0.7s ease-in-out;
+			opacity: ${opacity};
+			filter: blur(${blur});
+		`}>
+			{children}
+		</span>
+	)
 }
 
 export default class SkillRotator extends Component {
@@ -67,15 +89,24 @@ export default class SkillRotator extends Component {
 		interval: null,
 		active: 0,
 		entering: randomSkillIndex(),
+
+		// when the top phrase is active, it needs an "exit" state to trigger
+		// the exit animation
+
+		// when the bottom phrase is not yet entering, its default state should be hidden.
+		// when it enters, it should animate into an active state.
+
+		// these two transitions should happen at the same time.
+
+		isTransitioning: false,
+
 		cache: [0]
 	}
 
 	componentDidMount() {
 		const skillsLength = this.state.skills.length
 
-		this.interval = setInterval(() => {
-			this.randomSkill()
-		}, 3000)
+		this.interval = setInterval(() => this.randomSkill(), 3000)
 	}
 
 	componentWillUnmount() {
@@ -98,11 +129,11 @@ export default class SkillRotator extends Component {
 			cache.shift()
 		}
 
-		
 		this.setState({
 			cache,
 			entering: random,
-			active: entering
+			active: entering,
+			isTransitioning: !this.state.isTransitioning
 		})
 	}
 
@@ -112,13 +143,24 @@ export default class SkillRotator extends Component {
 		const { 
 			skills, 
 			active,
-			entering
+			entering,
+			isTransitioning
 		} = this.state
 
 		return (
 			<span>
-				<Skill active>{skills[active]}</Skill>
-				<Skill entering>{skills[entering]}</Skill>
+				<Skill 
+					active={isTransitioning ? false : true} 
+					exiting={isTransitioning ? true : false}
+				>
+					{skills[active]}
+				</Skill>
+				<Skill
+					active={isTransitioning ? false : true} 
+					entering={isTransitioning ? true : false}
+				>
+					{skills[entering]}
+				</Skill>
 			</span>
 		)
 	}
