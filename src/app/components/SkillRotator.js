@@ -37,107 +37,11 @@ function randomSkillIndex( cache ) {
 	}
 }
 
-/*
-export default function SkillRotator() {
-	const [ skillIndex, setSkillIndex ] = React.useState(0)
-
-	React.useEffect(() => {
-		const intervalId = setInterval(() => setSkillIndex(
-			randomSkillIndex()
-		), 3000)
-	})
-
-	return (
-		<span>
-			<TextTransition
-				text={ skills[ skillIndex ] }
-				springConfig={presets.default}
-			/>
-		</span>
-	)
-}
-*/
-
-// 
-// class Skill extends Component {
-// 	state = {
-// 		active: this.props.active,
-// 		entering: this.props.entering
-// 	}
-// 
-// 	render() {
-// 		const { children } = this.props
-// 		const {
-// 			active,
-// 			entering
-// 		} = this.state
-// 
-// 		return (
-// 			<span css={`
-// 				opacity: ${active ? '1' : '.5' };
-// 				filter: blur(${entering ? '2px' : '0'});
-// 				transition: all 0.7s ease-in-out;
-// 			`}>
-// 				{children}
-// 			</span>
-// 		)
-// 	}
-// }
-
-/*
-export function Skill({
-	active,
-	entering,
-	exiting,
-	children
-}) {
-	const activeStyles = `
-		opacity: 1;
-		filter: blur(0);
-		top: 0;
-	`
-
-	const exitingStyles = `
-		opacity: 0;
-		filter: blur(10px);
-		top: 10px;
-	`
-
-	const enteringStyles = `
-		opacity: 0;
-		filter: blur(10px);
-		top: -10px;
-	`
-
-	return (
-		<span css={`
-			transition: all 0.7s ease-in-out;
-			${ active ? activeStyles : '' }
-			${ exiting ? exitingStyles : '' }
-			${ entering ? enteringStyles : '' }
-		`}>
-			{children}
-		</span>
-	)
-}
-*/
-
-
 export default class SkillRotator extends Component {
 	state = {
 		skills,
 		interval: null,
 		active: randomSkillIndex(),
-
-		// when the top phrase is active, it needs an "exit" state to trigger
-		// the exit animation
-
-		// when the bottom phrase is not yet entering, its default state should be hidden.
-		// when it enters, it should animate into an active state.
-
-		// these two transitions should happen at the same time.
-
-
 		cache: [0]
 	}
 
@@ -183,6 +87,10 @@ export default class SkillRotator extends Component {
 		return (
 			<span>
 				<TextTransition
+					css={`
+						// override causes issues with width, needs fixing
+						display: inline-block !important;
+					`}
 					text={ skills[ active ] }
 					springConfig={presets.default}
 				/>
