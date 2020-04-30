@@ -89,6 +89,7 @@ export default class SkillRotator extends Component {
 				<TextTransition
 					css={`
 						// override causes issues with width, needs fixing
+						white-space: nowrap;
 						display: inline-block !important;
 					`}
 					text={ skills[ active ] }

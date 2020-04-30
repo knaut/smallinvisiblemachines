@@ -49,6 +49,9 @@ export default function Greeting() {
 					top: 'xsmall',
 					bottom: 'xsmall'
 				}}
+				css={`
+					white-space: nowrap;
+				`}
 			>
 				<span css={`font-style: italic;`}>I do... </span>
 				<span css={`font-weight: 800;`}>
