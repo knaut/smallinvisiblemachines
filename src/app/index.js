@@ -10,30 +10,12 @@ import Avatar from './components/Avatar'
 import Greeting from './components/Greeting'
 import CTAs from './components/CTAs'
 
-/*
-
-<Layout color={sim.global.colors.neutralLight}>
-				<Box width='large' background='red'>
-					<Logo 
-						arrangement={3}
-						color={sim.global.colors.neutralDarkGray}
-					/>
-				</Box>
-				<Box width='large' background='red'>
-					<Greeting/>
-				</Box>
-				<CTAs/>
-			</Layout>
-
-			*/
-
 function App() {
 	return (
 		<Theme>
 			<Box pad='medium'>
 				<Box 
 					width='50%' 
-					background='#ccc'
 				>
 					<Logo
 						arrangement={3}
@@ -44,7 +26,6 @@ function App() {
 			<Box pad='medium' align='center'>
 				<Box
 					width='xlarge'
-					background='#ccc'
 					align='center'
 				>
 					<Greeting/>
