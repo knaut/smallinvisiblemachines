@@ -10,7 +10,7 @@ import {
 
 import Theme from '../src/app/components/Theme'
 import Greeting from '../src/app/components/Greeting'
-import { Skill } from '../src/app/components/SkillRotator'
+import SkillRotator, { Skill } from '../src/app/components/SkillRotator'
 
 // STYLES
 import { sim } from '../src/app/components/Theme'
@@ -22,19 +22,27 @@ storiesOf('Greeting', module)
 		</Theme>
 	))
 
-storiesOf('Skill', module)
-	.add('active', () => (
+
+storiesOf('SkillRotator', module)
+	.add('default', () => (
 		<Theme>
-			<Skill active>This is an active skill</Skill>
+			<SkillRotator/>
 		</Theme>
 	))
-	.add('entering', () => (
-		<Theme>
-			<Skill entering>This is an entering skill</Skill>
-		</Theme>
-	))
-	.add('exiting', () => (
-		<Theme>
-			<Skill exiting>This is an exiting skill</Skill>
-		</Theme>
-	))
+
+// storiesOf('Skill', module)
+	// .add('active', () => (
+	// 	<Theme>
+	// 		<Skill active>This is an active skill</Skill>
+	// 	</Theme>
+	// ))
+	// .add('entering', () => (
+	// 	<Theme>
+	// 		<Skill entering>This is an entering skill</Skill>
+	// 	</Theme>
+	// ))
+	// .add('exiting', () => (
+	// 	<Theme>
+	// 		<Skill exiting>This is an exiting skill</Skill>
+	// 	</Theme>
+	// ))

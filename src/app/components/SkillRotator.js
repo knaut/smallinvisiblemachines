@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 // COMPONENTS
 import { Heading, Box } from 'grommet'
+import TextTransition, { presets } from 'react-text-transition'
 import Theme, { sim } from './Theme'
 
 const skills = [
@@ -35,6 +36,28 @@ function randomSkillIndex( cache ) {
 		}
 	}
 }
+
+/*
+export default function SkillRotator() {
+	const [ skillIndex, setSkillIndex ] = React.useState(0)
+
+	React.useEffect(() => {
+		const intervalId = setInterval(() => setSkillIndex(
+			randomSkillIndex()
+		), 3000)
+	})
+
+	return (
+		<span>
+			<TextTransition
+				text={ skills[ skillIndex ] }
+				springConfig={presets.default}
+			/>
+		</span>
+	)
+}
+*/
+
 // 
 // class Skill extends Component {
 // 	state = {
@@ -61,34 +84,50 @@ function randomSkillIndex( cache ) {
 // 	}
 // }
 
+/*
 export function Skill({
 	active,
 	entering,
 	exiting,
 	children
 }) {
-	const opacity = active ? 1 : 0
-	// const transition = `transition: all 0.7s ease-in-out;`
-	const blur = entering || exiting ? '10px' : 0
+	const activeStyles = `
+		opacity: 1;
+		filter: blur(0);
+		top: 0;
+	`
 
+	const exitingStyles = `
+		opacity: 0;
+		filter: blur(10px);
+		top: 10px;
+	`
+
+	const enteringStyles = `
+		opacity: 0;
+		filter: blur(10px);
+		top: -10px;
+	`
 
 	return (
 		<span css={`
 			transition: all 0.7s ease-in-out;
-			opacity: ${opacity};
-			filter: blur(${blur});
+			${ active ? activeStyles : '' }
+			${ exiting ? exitingStyles : '' }
+			${ entering ? enteringStyles : '' }
 		`}>
 			{children}
 		</span>
 	)
 }
+*/
+
 
 export default class SkillRotator extends Component {
 	state = {
 		skills,
 		interval: null,
-		active: 0,
-		entering: randomSkillIndex(),
+		active: randomSkillIndex(),
 
 		// when the top phrase is active, it needs an "exit" state to trigger
 		// the exit animation
@@ -98,7 +137,6 @@ export default class SkillRotator extends Component {
 
 		// these two transitions should happen at the same time.
 
-		isTransitioning: false,
 
 		cache: [0]
 	}
@@ -131,36 +169,23 @@ export default class SkillRotator extends Component {
 
 		this.setState({
 			cache,
-			entering: random,
-			active: entering,
-			isTransitioning: !this.state.isTransitioning
+			active: random,
 		})
 	}
 
 	render() {
-		console.log(this.state)
 
 		const { 
 			skills, 
 			active,
-			entering,
-			isTransitioning
 		} = this.state
 
 		return (
 			<span>
-				<Skill 
-					active={isTransitioning ? false : true} 
-					exiting={isTransitioning ? true : false}
-				>
-					{skills[active]}
-				</Skill>
-				<Skill
-					active={isTransitioning ? false : true} 
-					entering={isTransitioning ? true : false}
-				>
-					{skills[entering]}
-				</Skill>
+				<TextTransition
+					text={ skills[ active ] }
+					springConfig={presets.default}
+				/>
 			</span>
 		)
 	}
