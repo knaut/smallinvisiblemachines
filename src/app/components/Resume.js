@@ -42,11 +42,18 @@ function Employment({
 
 function ModalBox({ active, children }) {
 	return active ? (
-		<Box css={`
-			position: absolute;
-			top: 0;
-			opacity: .5;
-		`}>
+		<Box 
+				width='xxlarge'
+				background={sim.global.colors.neutralDarkGray}
+				round='small'
+				pad='large'
+				css={`
+					box-shadow: 0 0 30px ${sim.global.colors.neutralGray};
+					position: absolute;
+					z-index: 205 !important;
+					// overflow-y: scroll;
+					top: 0;
+				`}>
 			{ children }
 		</Box>
 	) : null
@@ -83,7 +90,7 @@ function ModalLayer({ children }) {
 
 export default function Resume() {
 	return (
-		<ModalBox>
+		<ModalBox active>
 				<Heading level={1} weight='medium'>
 					Daniel Anderson
 				</Heading>

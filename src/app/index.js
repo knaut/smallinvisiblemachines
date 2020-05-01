@@ -27,10 +27,10 @@ function App() {
 		<Theme>
 			<Box css={`position: relative;`}>
 				<Box id='top' css={`
-						height: 100%;
-				    height: -moz-available;
-				    height: -webkit-fill-available;
-				    height: fill-available;
+						min-height: 100%;
+				    min-height: -moz-available;
+				    min-height: -webkit-fill-available;
+				    min-height: fill-available;
 				`} background={sim.global.colors.neutralLight}>
 					<Box pad='medium'>
 						<Box 
