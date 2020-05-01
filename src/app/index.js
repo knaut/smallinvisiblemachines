@@ -25,36 +25,43 @@ function Copyright() {
 function App() {
 	return (
 		<Theme>
-			<Box css={'min-height: 100%'} background={sim.global.colors.neutralLight}>
-				<Box pad='medium'>
-					<Box 
-						width='50%' 
-					>
-						<Logo
-							arrangement={3}
-							color={sim.global.colors.neutralDarkGray}
-						/>
+			<Box css={`position: relative;`}>
+				<Box id='top' css={`
+						height: 100%;
+				    height: -moz-available;
+				    height: -webkit-fill-available;
+				    height: fill-available;
+				`} background={sim.global.colors.neutralLight}>
+					<Box pad='medium'>
+						<Box 
+							width='50%' 
+						>
+							<Logo
+								arrangement={3}
+								color={sim.global.colors.neutralDarkGray}
+							/>
+						</Box>
+					</Box>
+					<Box pad='medium' align='center' margin={{bottom:'xlarge'}}>
+						<Box
+							width='xlarge'
+							align='center'
+						>
+							<Greeting/>
+							<CTAs/>
+						</Box>
 					</Box>
 				</Box>
-				<Box pad='medium' align='center' margin={{bottom:'xlarge'}}>
+				<Box pad='xlarge' align='center' background={sim.global.colors.neutralBlack}>
 					<Box
 						width='xlarge'
 						align='center'
 					>
-						<Greeting/>
-						<CTAs/>
+						<Copyright/>
 					</Box>
 				</Box>
+				<Resume/>
 			</Box>
-			<Box pad='xlarge' align='center' background={sim.global.colors.neutralBlack}>
-				<Box
-					width='xlarge'
-					align='center'
-				>
-					<Copyright/>
-				</Box>
-			</Box>
-			<Resume/>
 		</Theme>
 	)
 }
