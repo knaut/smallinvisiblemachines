@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 
 // COMPONENTS
 import { Heading, Box, Text, Anchor } from 'grommet'
@@ -66,4 +66,4 @@ function App() {
 	)
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+render(<App/>, document.getElementById('root'))
