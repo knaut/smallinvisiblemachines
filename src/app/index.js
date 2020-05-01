@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 // COMPONENTS
-import { Heading, Box } from 'grommet'
+import { Heading, Box, Text, Anchor } from 'grommet'
 import Theme, { sim } from './components/Theme'
 import Layout from './components/Layout'
 import Logo from './components/Logo'
@@ -13,23 +13,36 @@ import CTAs from './components/CTAs'
 function App() {
 	return (
 		<Theme>
-			<Box pad='medium'>
-				<Box 
-					width='50%' 
-				>
-					<Logo
-						arrangement={3}
-						color={sim.global.colors.neutralDarkGray}
-					/>
+			<Box css={'min-height: 100%'} background={sim.global.colors.neutralLight}>
+				<Box pad='medium'>
+					<Box 
+						width='50%' 
+					>
+						<Logo
+							arrangement={3}
+							color={sim.global.colors.neutralDarkGray}
+						/>
+					</Box>
+				</Box>
+				<Box pad='medium' align='center' margin={{bottom:'xlarge'}}>
+					<Box
+						width='xlarge'
+						align='center'
+					>
+						<Greeting/>
+						<CTAs/>
+					</Box>
 				</Box>
 			</Box>
-			<Box pad='medium' align='center'>
+			<Box pad='xlarge' align='center' background={sim.global.colors.neutralBlack}>
 				<Box
 					width='xlarge'
 					align='center'
 				>
-					<Greeting/>
-					<CTAs/>
+					<Text size='medium'>© {new Date().getFullYear()}  Daniel A. Anderson. All rights reserved.</Text>
+					<Text size='medium'>
+						<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
+					</Text>
 				</Box>
 			</Box>
 		</Theme>

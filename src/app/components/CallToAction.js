@@ -25,8 +25,6 @@ export default class CallToAction extends Component {
 		
 		const { isHover } = this.state
 
-		console.log(this.state)
-
 		return(
 			<Box
 				direction='row'
@@ -40,7 +38,7 @@ export default class CallToAction extends Component {
 					alignSelf='start'
 					margin={{right: 'small'}}
 					pad='small'
-					border={isHover ? {size: 'medium'} : {size: 'medium', color: 'transparent'}}
+					border={isHover ? {size: 'medium', color: sim.global.colors.neutralBlack} : {size: 'medium', color: 'transparent'}}
 					round='full'
 					background={isHover ? iconColor : false}
 					onMouseEnter={this.handleMouseEnter}
