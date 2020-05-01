@@ -31,7 +31,7 @@ export default class CallToAction extends Component {
 				margin='xsmall'
 				css={`
 					position: relative;
-					z-index: 100;
+					z-index: 10;
 				`}
 			>
 				<Box

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 
 // COMPONENTS
@@ -9,6 +9,18 @@ import Logo from './components/Logo'
 import Avatar from './components/Avatar'
 import Greeting from './components/Greeting'
 import CTAs from './components/CTAs'
+import Resume from './components/Resume'
+
+function Copyright() {
+	return (
+		<Fragment>
+			<Text size='medium'>© {new Date().getFullYear()}  Daniel A. Anderson. All rights reserved.</Text>
+			<Text size='medium'>
+				<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
+			</Text>
+		</Fragment>
+	)
+}
 
 function App() {
 	return (
@@ -39,12 +51,10 @@ function App() {
 					width='xlarge'
 					align='center'
 				>
-					<Text size='medium'>© {new Date().getFullYear()}  Daniel A. Anderson. All rights reserved.</Text>
-					<Text size='medium'>
-						<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
-					</Text>
+					<Copyright/>
 				</Box>
 			</Box>
+			<Resume/>
 		</Theme>
 	)
 }
