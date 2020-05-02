@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 // COMPONENTS
 import { MailOption, Clipboard, Github } from 'grommet-icons'
 import { Box, Text, Layer, Stack, Heading, Anchor } from 'grommet'
 import Theme, { sim } from './Theme'
+
+// ACTIONS
+import { toggle } from '../actions/resume'
 
 function Profile() {
 	return (
@@ -84,48 +89,68 @@ function ModalLayer({ children }) {
 				{ children }
 			</Box>
 		</Layer>
-	)
-	
+	)	
 }
 
-export default function Resume() {
-	return (
-		<ModalBox active>
-				<Heading level={1} weight='medium'>
-					Daniel Anderson
-				</Heading>
-				<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
-				<Profile/>
-				<Employment
-					title={'Senior Front-End Developer'}
-					employer={'Twitter'}
-					start={'September 2019'}
-					end={'March 2020'}
-					copy={`Developed single-page web apps using React, Redux, Webpack, and related technologies on the Salesforce platform. Integrated open source technologies with proprietary frameworks and internal APIs. Gathered, curated, and documented critical requirements from key stakeholders. Developed internal applications to solve broad user experience and automation problems that drive sales and revenue.`}
-				/>
-				<Employment
-					title={'Director of Engineering'}
-					employer={'Magnitude.io'}
-					start={'October 2018'}
-					end={'September 2019'}
-					copy={`Developed UIs & APIs using NodeJS, React, and similar technologies for an ed-tech platform serving K-12 students conducting experiments in low earth orbit and on the International Space Station using real-time IoT devices. Maintained and upgraded existing codebases while guiding new feature development under a SPA and PWA strategy. Defined project goals with stakeholders and managed a small team across timezones.`}
-				/>
-				<Employment
-					title={'Co-Founder, Lead Developer'}
-					employer={'HAVYN, Inc.'}
-					start={'January 2016'}
-					end={'October 2018'}
-					copy={`Co-founded HAVYN, Inc. as Lead Developer. Developed end-to-end Javascript software architecture for smart locker IoT product. Developed cloud-based NodeJS server to manage all devices in the field in real-time using message-passing protocols such MQTT and SMS. Designed and developed a mobile application with React Native. Prototyped IoT product with Linux SBC platforms. Guided technology solutions and designed user interactions consistent with brand experience.`}
-				/>
+function mapStateToProps(state, ownProps) {
+	const { active } = state.resume
 
-				<Employment
-					title={'Artist In Residence'}
-					employer={'Merchants of Reality'}
-					start={'May 2016'}
-					end={'May 2017'}
-					copy={`Joined artist-in-residence program at Merchants of Reality, 501(c)3 arts-oriented nonprofit. Projects included projection-mapped installations with real-time, wearable interfaces; a 15' water-borne LED pyramid at a coastal arts festival; and a full-length science fiction novel. Responsibilities during residency included: project management, volunteer management, crowdfunding, grant writing, PR, design, web development, and maintenance of a historic venue space circa 1906 in downtown San Francisco.`}
-				/>
-
-		</ModalBox>
-	)
+	return {
+		active
+	}
 }
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators({
+			toggle
+		}, dispatch)
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(
+	function Resume({ active, actions }) {
+		return (
+			<ModalBox active={active} >
+					<Heading level={1} weight='medium'>
+						Daniel Anderson
+					</Heading>
+					<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
+					<Profile/>
+					<Employment
+						title={'Senior Front-End Developer'}
+						employer={'Twitter'}
+						start={'September 2019'}
+						end={'March 2020'}
+						copy={`Developed single-page web apps using React, Redux, Webpack, and related technologies on the Salesforce platform. Integrated open source technologies with proprietary frameworks and internal APIs. Gathered, curated, and documented critical requirements from key stakeholders. Developed internal applications to solve broad user experience and automation problems that drive sales and revenue.`}
+					/>
+					<Employment
+						title={'Director of Engineering'}
+						employer={'Magnitude.io'}
+						start={'October 2018'}
+						end={'September 2019'}
+						copy={`Developed UIs & APIs using NodeJS, React, and similar technologies for an ed-tech platform serving K-12 students conducting experiments in low earth orbit and on the International Space Station using real-time IoT devices. Maintained and upgraded existing codebases while guiding new feature development under a SPA and PWA strategy. Defined project goals with stakeholders and managed a small team across timezones.`}
+					/>
+					<Employment
+						title={'Co-Founder, Lead Developer'}
+						employer={'HAVYN, Inc.'}
+						start={'January 2016'}
+						end={'October 2018'}
+						copy={`Co-founded HAVYN, Inc. as Lead Developer. Developed end-to-end Javascript software architecture for smart locker IoT product. Developed cloud-based NodeJS server to manage all devices in the field in real-time using message-passing protocols such MQTT and SMS. Designed and developed a mobile application with React Native. Prototyped IoT product with Linux SBC platforms. Guided technology solutions and designed user interactions consistent with brand experience.`}
+					/>
+
+					<Employment
+						title={'Artist In Residence'}
+						employer={'Merchants of Reality'}
+						start={'May 2016'}
+						end={'May 2017'}
+						copy={`Joined artist-in-residence program at Merchants of Reality, 501(c)3 arts-oriented nonprofit. Projects included projection-mapped installations with real-time, wearable interfaces; a 15' water-borne LED pyramid at a coastal arts festival; and a full-length science fiction novel. Responsibilities during residency included: project management, volunteer management, crowdfunding, grant writing, PR, design, web development, and maintenance of a historic venue space circa 1906 in downtown San Francisco.`}
+					/>
+
+			</ModalBox>
+		)
+	}
+)

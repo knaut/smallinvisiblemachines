@@ -12,6 +12,14 @@ export default class CallToAction extends Component {
 
 	handleMouseEnter = () => this.setState({ isHover: true })
 	handleMouseLeave = () => this.setState({ isHover: false })
+	handleClick = () => {
+		const { handler } = this.props
+		// fire handler passed in from parent
+		console.log(this)
+		if (handler) {
+			handler()
+		}
+	}
 
 	render() {
 		const {
@@ -20,7 +28,8 @@ export default class CallToAction extends Component {
 			headline,
 			headlineColor,
 			subline,
-			url
+			url,
+			handler
 		} = this.props
 		
 		const { isHover } = this.state
@@ -43,6 +52,7 @@ export default class CallToAction extends Component {
 					background={isHover ? iconColor : false}
 					onMouseEnter={this.handleMouseEnter}
 					onMouseLeave={this.handleMouseLeave}
+					onClick={this.handleClick}
 					css={`
 						transition: 0.2s all ease-in-out;
 						cursor: pointer;

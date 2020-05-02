@@ -1,10 +1,49 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 // COMPONENTS
 import { MailOption, Clipboard, Github } from 'grommet-icons'
 import { Box, Text } from 'grommet'
 import Theme, { sim } from './Theme'
 import CallToAction from './CallToAction'
+
+// ACTIONS
+import { toggle } from '../actions/resume'
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators({
+			toggle
+		}, dispatch)
+	}
+}
+
+function ResumeCTA({ actions }) {
+	function handleClick(e) {
+		e.preventDefault()
+		const { toggle } = actions
+		toggle()
+	}
+
+	return (
+		<CallToAction
+			url={'/resume'}
+			iconColor={sim.global.colors.primaryGreen}
+			headlineColor={sim.global.colors.darkGreen}
+			icon={
+				<Clipboard/>
+			}
+			headline='read my resume'
+			subline=','
+		/>
+	)
+}
+
+const ConnectedResumeCTA = connect(
+		() => new Object(), // no store state needed here
+		mapDispatchToProps
+	)(ResumeCTA)
 
 export default function CTAs() {
 	return (
@@ -19,16 +58,7 @@ export default function CTAs() {
 				headline='email'
 				subline='&nbsp;me to get in touch,'
 			/>
-			<CallToAction
-				url={'/resume'}
-				iconColor={sim.global.colors.primaryGreen}
-				headlineColor={sim.global.colors.darkGreen}
-				icon={
-					<Clipboard/>
-				}
-				headline='read my resume'
-				subline=','
-			/>
+			<ConnectedResumeCTA/>
 			<CallToAction
 				url={'https://www.github.com/knaut'}
 				iconColor={sim.global.colors.primaryPurple}
