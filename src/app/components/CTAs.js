@@ -20,15 +20,14 @@ function mapDispatchToProps(dispatch) {
 }
 
 function ResumeCTA({ actions }) {
-	function handleClick(e) {
-		e.preventDefault()
+	function handleClick() {
 		const { toggle } = actions
 		toggle()
 	}
 
 	return (
 		<CallToAction
-			url={'/resume'}
+			handler={handleClick}
 			iconColor={sim.global.colors.primaryGreen}
 			headlineColor={sim.global.colors.darkGreen}
 			icon={
@@ -41,9 +40,9 @@ function ResumeCTA({ actions }) {
 }
 
 const ConnectedResumeCTA = connect(
-		() => new Object(), // no store state needed here
-		mapDispatchToProps
-	)(ResumeCTA)
+	() => new Object(), // no store state needed here
+	mapDispatchToProps
+)(ResumeCTA)
 
 export default function CTAs() {
 	return (

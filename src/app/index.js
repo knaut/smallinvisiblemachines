@@ -65,6 +65,8 @@ function App() {
 					<Theme>
 						<Box css={`position: relative;`}>
 							<Splash/>
+							<Resume/>
+							
 							<Box pad='xlarge' align='center' background={sim.global.colors.neutralBlack}>
 								<Box
 									width='xlarge'
@@ -72,9 +74,7 @@ function App() {
 								>
 									<Copyright/>
 								</Box>
-							</Box>
-							<Resume/>
-							
+							</Box>							
 						</Box>
 					</Theme>
 				</Switch>

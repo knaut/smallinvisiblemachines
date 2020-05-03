@@ -2,7 +2,7 @@ import { RESUME_TOGGLE } from '../actions/resume'
 
 export default function resume(
 	state = {
-		active: true
+		active: false
 	},
 	action
 ) {
