@@ -42,6 +42,12 @@ const ExtraCondensedBlack = `
 	font-weight: 800;
 	font-style: normal;
 `
+const Medium = `
+	font-family: acumin-pro, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+`
+
 
 function Profile() {
 	return (
@@ -96,11 +102,7 @@ function Employment({
 			<Heading 
 				level={3}
 				margin={{ bottom: 'xsmall' }}
-				css={`
-					max-width: 100%;
-					font-weight: 600;
-					font-family: Acumin Pro;
-				`}
+				css={Employment}
 			>{title} {employer ? `at ${employer}` : ''} — {start} - {end}</Heading>
 			<Text>{copy}</Text>
 		</Box>
