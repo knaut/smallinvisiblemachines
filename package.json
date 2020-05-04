@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "npx webpack-dev-server --config webpack.local.js",
-    "storybook": "npx start-storybook -p 6006"
+    "storybook": "npx start-storybook -p 6006",
+    "server": "node ./src/server"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
