@@ -7,18 +7,6 @@ module.exports = {
 	entry: {
 		app: './src/app'
 	},
-	output: {
-		path: path.resolve(__dirname, 'build'),
-		filename: '[name].bundle.js',
-		publicPath: '/'
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Daniel A. Anderson - Small Invisible Machines',
-			inject: true,
-			template: './webpack.template.html',
-		})
-	],
 	module: {
 		rules: [
 			{

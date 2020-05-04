@@ -32,15 +32,23 @@ import Theme, { sim } from './Theme'
 // ACTIONS
 import { toggle } from '../actions/resume'
 
+const ExtraCondensedMedium = `
+	font-family: acumin-pro-extra-condensed, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+`
+const ExtraCondensedBlack = `
+	font-family: acumin-pro-extra-condensed, sans-serif;
+	font-weight: 800;
+	font-style: normal;
+`
+
 function Profile() {
 	return (
 		<Box>
 			<Heading 
 				margin={{ bottom: 'xsmall' }}
-				css={`
-					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed, Acumin Pro ExtraCondensed Medium;
-				`}
+				css={ExtraCondensedMedium}
 			>Profile</Heading>
 			<Box margin={{bottom: 'small'}}>
 				<Text>Full-stack web developer of 10+ years experience. Skills include Javascript, CSS3, HTML5, Adobe Creative Cloud Suite, and a variety of frameworks for front-end, server, mobile, and cloud applications. Strong background in user experience design.</Text>
@@ -67,10 +75,7 @@ function Skills() {
 		<Box>
 			<Heading
 				margin={{ bottom: 'xsmall' }} 
-				css={`
-					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed Medium;
-				`}
+				css={ExtraCondensedMedium}
 			>Skills</Heading>
 			<ul css={'margin: 0; padding: 0;'}>
 				{ skills.map(item => <li css={`display: inline;`}>{item}, </li>) }
@@ -226,9 +231,7 @@ function Header() {
 			<Heading 
 				size='large'
 				margin={{bottom: 'xxsmall'}}
-				css={`
-				font-family: Acumin Pro ExtraCondensed Black, Acumin Pro ExtraCondensed Bold, Helvetica Neue, Helvetica, sans-serif;
-			`}>
+				css={ExtraCondensedBlack}>
 				Daniel Anderson
 			</Heading>
 			<ContactLinks/>
@@ -250,10 +253,7 @@ function Education() {
 		<Fragment>
 			<Heading
 				margin={{ bottom: 'xsmall' }}
-				css={`
-					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed Medium, Helvetica Neue, Helvetica, sans-serif;
-				`}
+				css={ExtraCondensedMedium}
 			>
 				Education
 			</Heading>

@@ -4,6 +4,11 @@ const common = require('./webpack.common.js')
 const webpack = require('webpack')
 
 module.exports = merge(common, {
+	output: {
+		path: path.resolve(__dirname, 'build'),
+		filename: '[name].bundle.js',
+		publicPath: '/'
+	},
 	mode: 'development',
 	devtool: 'inline-source-map',
 	performance: {
@@ -21,6 +26,10 @@ module.exports = merge(common, {
 		historyApiFallback: true
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new HtmlWebpackPlugin({
+			title: 'Daniel A. Anderson - Small Invisible Machines',
+			inject: true,
+			template: './webpack.template.html',
+		})
 	]
 })
