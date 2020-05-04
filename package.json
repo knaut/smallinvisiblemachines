@@ -6,7 +6,7 @@
     "start": "npx webpack-dev-server --config webpack.local.js",
     "build": "npx webpack --config webpack.production.js",
     "storybook": "npx start-storybook -p 6006",
-    "server": "node ./build/app.js",
+    "server": "node ./build/app.js"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
