@@ -1,18 +1,31 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 // COMPONENTS
-import { MailOption, Clipboard, Github, Close } from 'grommet-icons'
+import {
+	MailOption,
+	Download,
+	Clipboard,
+	Github,
+	Close,
+	DocumentPdf,
+	DocumentWord,
+	DocumentTxt,
+	FormDown
+
+} from 'grommet-icons'
+
 import {
 	Box,
+	Menu,
 	Text,
 	Layer,
 	Stack,
 	Heading,
 	Anchor,
 	Button,
-	Dropbutton 
+	DropButton,
 } from 'grommet'
 import Theme, { sim } from './Theme'
 
@@ -22,19 +35,46 @@ import { toggle } from '../actions/resume'
 function Profile() {
 	return (
 		<Box>
-			<Heading level={2}>Profile</Heading>
+			<Heading 
+				margin={{ bottom: 'xsmall' }}
+				css={`
+					font-weight: 600;
+					font-family: Acumin Pro ExtraCondensed;
+				`}
+			>Profile</Heading>
 			<Box margin={{bottom: 'small'}}>
-				<Text>Full-stack web developer of 10+ years experience. Skills include Javascript, NodeJS, CSS3, HTML5, Adobe CC Suite, and a variety of frameworks for server, web, mobile, and internet-of-things. Strong front-end web background, particularly in React & Redux applications, with a focus on the end user experience.</Text>
+				<Text>Full-stack web developer of 10+ years experience. Skills include Javascript, CSS3, HTML5, Adobe Creative Cloud Suite, and a variety of frameworks for front-end, server, mobile, and cloud applications. Strong background in user experience design.</Text>
 			</Box>
 			<Box margin={{bottom: 'small'}}>
-				<Text>Development skills include ECMAScript 5/6/7, NodeJS, React, Redux, Babel, Webpack, and Git. Server and database skills include MongoDB, Redis, Hapi, & Koa. Deep experience in CSS, SCSS, CSS-in-JS, and related styling stack configurations. Built responsive web apps, progressive web apps, command line tools, Chrome extensions, and decentralized apps leveraging blockchain.</Text>
+				<Text>Development skillset features Javascript, NodeJS, Babel, Webpack, React, Redux, and command line tools including git and npm. Database skills include MongoDB, Mongoose, and Redis. Server development skills include, Express, Hapi, and Koa. Additional development skills in data visualization (d3.js), responsive and progressive web apps, chrome extensions, and decentralized apps leveraging blockchain authentication.</Text>
 			</Box>
 			<Box margin={{bottom: 'small'}}>
-				<Text>Internet-of-things experience includes Raspberry Pi, Arduino, Tessel, and messaging protocols such as Web Sockets for interactive and real-time solutions. Designed and developed hardware-driven user experiences for professional and creative settings.</Text>
+				<Text>Hardware prototyping and internet-of-things skillset includes Single-Board Computers (SBCs) and microcontrollers such as Raspberry Pi, Arduino, and Tessel. Skilled in developing cloud-driven applications for in-the-field IoT devices in consumer, educational, and scientific settings. Experience integrating Web Sockets, Open Sound Control (OSC), and related real-time message-passing protocols across the stack.</Text>
 			</Box>
 			<Box margin={{bottom: 'small'}}>
-				<Text>Comfortable in a variety of team styles. Strong ability to deal with edge cases. Loves product managers, designers, and engineers alike. Fights for the user's experience. Independently published sci-fi novelist.</Text>
+				<Text>Comfortable in a variety of team styles. Strong ability to deal with edge cases. Loves product managers, designers, and engineers alike. A big-picture thinker who accounts for subtle details. Loves to craft excellent user experiences. Science fiction novelist.</Text>
 			</Box>
+		</Box>
+	)
+}
+
+function Skills() {
+	const skills = [
+		'Javascript (ECMAScript 2015-2019)', 'NodeJS', 'ReactJS', 'Redux', 'CSS3', 'HTML5', 'Git', 'NPM (Node Package Manager)', 'Webpack', 'Storybook', 'styled-components', 'CSS-in-JS', 'Sass', 'Less', 'Stylus', 'Grommet', 'Bootstrap', 'Core UI', 'Express', 'Hapi', 'Koa', 'MongoDB', 'Mongoose', 'Redis', 'Raspberry Pi', 'Arduino', 'Tessel', 'Heroku', 'Amazon Web Services (AWS)', 'Google Cloud Platform (GCP)', 'Terraform', 'Adobe Creative Cloud', 'Adobe Photoshop', 'Adobe Premiere', 'Adobe Acrobat', 'Adobe AfterEffects', 'Balsamiq Mockups', 'WebSockets', 'Open Sound Control (OSC)', 'VDMX', 'MadMapper', 'MySQL (SQL)', 'C', 'Rust', 'Linux', 'command line', 'Sublime Text', 'chrome extensions', 'progressive web apps', 'responsive web apps', 'decentralized apps', 'blockchain authentication'
+	]
+
+	return (
+		<Box>
+			<Heading
+				margin={{ bottom: 'xsmall' }} 
+				css={`
+					font-weight: 600;
+					font-family: Acumin Pro ExtraCondensed;
+				`}
+			>Skills</Heading>
+			<ul css={'margin: 0; padding: 0;'}>
+				{ skills.map(item => <li css={`display: inline;`}>{item}, </li>) }
+			</ul>
 		</Box>
 	)
 }
@@ -48,7 +88,15 @@ function Employment({
 }) {
 	return (
 		<Box>
-			<Heading level={3}>{title} at {employer} — {start} - {end}</Heading>
+			<Heading 
+				level={3}
+				margin={{ bottom: 'xsmall' }}
+				css={`
+					max-width: 100%;
+					font-weight: 600;
+					font-family: Acumin Pro;
+				`}
+			>{title} {employer ? `at ${employer}` : ''} — {start} - {end}</Heading>
 			<Text>{copy}</Text>
 		</Box>
 	)
@@ -73,40 +121,58 @@ const ModalClose = connect(
 					<Close/>
 				}
 				onClick={() => toggle()}
-				label='Close'
-				css={`
-					align-self: flex-end;
-				`}
 			/>
 		)
 	}
 )
 
-const DownloadResume = connect(
-	() => new Object(),
-	function (dispatch) {
-		return {
-			actions: bindActionCreators({
-
-			}, dispatch)
-		}
+function DownloadResume() {
+	const [ open, setOpen ] = React.useState()
+	
+	function handleOpen() {
+		setOpen(true)
 	}
-)(
-	({ actions }) => {
-		return (
-			<DropButton
-          label="Open"
-          open={open}
-          onOpen={onOpen}
-          onClose={onClose}
-          dropContent={<DropContent onClose={onClose} />}
-          dropProps={{ align: { top: "bottom" } }}
-        />
-		)
+
+	function handleClose() {
+		setOpen(false)
 	}
-)
 
-
+	return (
+		<Menu
+			primary
+			css={`
+				border-radius: 5px !important;
+			`}
+		  dropProps={{
+		    align: { top: "bottom", left: "left" },
+		    elevation: "xlarge",
+		    background: sim.global.colors.neutralDarkGray
+		  }}
+		  dropBackground={sim.global.colors.neutralLight}
+		  label='Download Resume as File'
+		  icon={<Download color={sim.global.colors.neutralBlack}/>}
+		  items={[
+		    { 
+		     label: <Box alignSelf='center'>PDF</Box>,
+		     icon: <Box pad='xsmall'><DocumentPdf/></Box>,
+		     onClick: () => {} 
+		    },
+		    { 
+		     label: <Box alignSelf='center'>Word Doc</Box>,
+		     icon: <Box pad='xsmall'><DocumentWord/></Box>,
+		     onClick: () => {} 
+		    },
+		    { 
+		     label: <Box alignSelf='center'>Plain Text</Box>,
+		     icon: <Box pad='xsmall'><DocumentTxt/></Box>,
+		     onClick: () => {} 
+		    }
+		  ]}
+		/>
+		
+     
+	)
+}
 
 function ModalBox({ active, children }) {
 	return active ? (
@@ -118,7 +184,7 @@ function ModalBox({ active, children }) {
 				top: 0;
 				left: 0;
 				right: 0;
-				z-index: 205 !important;
+				z-index: 19 !important;
 				transition: all 0.3s ease-in-out;
 				background: ${active ? 'rgba(255,255,255,0.5)' : 'transparent' };
 		`}>
@@ -154,6 +220,49 @@ function mapDispatchToProps(dispatch) {
 	}
 }
 
+function Header() {
+	return (
+		<Fragment>
+			<Heading 
+				size='large'
+				margin={{bottom: 'xxsmall'}}
+				css={`
+				font-family: Acumin Pro ExtraCondensed Black;
+			`}>
+				Daniel Anderson
+			</Heading>
+			<ContactLinks/>
+		</Fragment>
+	)
+}
+
+function ContactLinks() {
+	return (
+		<Fragment>
+			<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
+			<Anchor href='https://www.github.com/knaut'>github.com/knaut</Anchor>
+		</Fragment>
+	)
+}
+
+function Education() {
+	return (
+		<Fragment>
+			<Heading
+				margin={{ bottom: 'xsmall' }}
+				css={`
+					font-weight: 600;
+					font-family: Acumin Pro ExtraCondensed;
+				`}
+			>
+				Education
+			</Heading>
+			<Text>Maryland Institute College of Art - 2006 - 2008</Text>
+			<Text>Painting Major, Creative Writing Minor</Text>
+		</Fragment>
+	)
+}
+
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
@@ -161,40 +270,79 @@ export default connect(
 	function Resume({ active, actions }) {
 		return (
 			<ModalBox active={active}>
-				<ModalClose/>
-				<Heading level={1} weight='medium'>
-					Daniel Anderson
-				</Heading>
-				<Anchor href='mailto:daniel@smallinvisiblemachines.com'>daniel@smallinvisiblemachines.com</Anchor>
+
+				<Box
+					direction='row'
+					justify='between'
+				>
+					<DownloadResume/>
+
+					<ModalClose/>
+				</Box>
+				<Header/>
 				<Profile/>
+				<Skills/>
 				<Employment
 					title={'Senior Front-End Developer'}
 					employer={'Twitter'}
 					start={'September 2019'}
 					end={'March 2020'}
-					copy={`Developed single-page web apps using React, Redux, Webpack, and related technologies on the Salesforce platform. Integrated open source technologies with proprietary frameworks and internal APIs. Gathered, curated, and documented critical requirements from key stakeholders. Developed internal applications to solve broad user experience and automation problems that drive sales and revenue.`}
+					copy={`Developed single-page web apps using React, Redux, Webpack, and related technologies for the Salesforce platform. Integrated open source technologies with proprietary frameworks (Salesforce Lightning, Visualforce) and internal APIs. Gathered, curated, and documented critical requirements from key stakeholders. Developed internal applications and workflows to solve broad user experience and automation problems that drive sales.`}
 				/>
 				<Employment
 					title={'Director of Engineering'}
 					employer={'Magnitude.io'}
 					start={'October 2018'}
 					end={'September 2019'}
-					copy={`Developed UIs & APIs using NodeJS, React, and similar technologies for an ed-tech platform serving K-12 students conducting experiments in low earth orbit and on the International Space Station using real-time IoT devices. Maintained and upgraded existing codebases while guiding new feature development under a SPA and PWA strategy. Defined project goals with stakeholders and managed a small team across timezones.`}
+					copy={`Developed full stack applications using NodeJS, ReactJS, and related technologies for an ed-tech platform serving K-12 students conducting experiments in low earth orbit and on the International Space Station using real-time devices. Maintained and upgraded existing codebases while guiding new feature development under a SPA and PWA strategy. Defined project goals with stakeholders and managed a small team across timezones.`}
 				/>
 				<Employment
 					title={'Co-Founder, Lead Developer'}
 					employer={'HAVYN, Inc.'}
 					start={'January 2016'}
 					end={'October 2018'}
-					copy={`Co-founded HAVYN, Inc. as Lead Developer. Developed end-to-end Javascript software architecture for smart locker IoT product. Developed cloud-based NodeJS server to manage all devices in the field in real-time using message-passing protocols such MQTT and SMS. Designed and developed a mobile application with React Native. Prototyped IoT product with Linux SBC platforms. Guided technology solutions and designed user interactions consistent with brand experience.`}
+					copy={`Co-founded HAVYN, Inc. as Lead Developer. Developed end-to-end software architecture for consumer smart locker product. Developed cloud-based NodeJS server to manage a fleet of devices in real-time. Developed hardware prototype applications in NodeJS on Linux SBCs and embedded systems, leveraging Optical Character Recognition (OCR) and SMS messaging. Developed internal CLIs to automate key tasks and workflows. Designed and developed front-end web user experience, dashboards, and marketing websites. Designed and developed a mobile application with React Native. Guided technology solutions and developed user interactions consistent with desired brand experience.`}
 				/>
 				<Employment
 					title={'Artist In Residence'}
-					employer={'Merchants of Reality'}
+					employer={null}
 					start={'May 2016'}
 					end={'May 2017'}
-					copy={`Joined artist-in-residence program at Merchants of Reality, 501(c)3 arts-oriented nonprofit. Projects included projection-mapped installations with real-time, wearable interfaces; a 15' water-borne LED pyramid at a coastal arts festival; and a full-length science fiction novel. Responsibilities during residency included: project management, volunteer management, crowdfunding, grant writing, PR, design, web development, and maintenance of a historic venue space circa 1906 in downtown San Francisco.`}
+					copy={`Joined artist-in-residence program at Merchants of Reality, a 501(c)3 arts-oriented nonprofit. Projects included a projection-mapped video installation at St. Patrick’s Cathedral of San Francisco; a 15' water-borne LED-lit pyramid at Symbiosis arts festival; and a full-length science fiction novel. Responsibilities during residency included: project management, volunteer management, crowdfunding, grant writing, PR, design, web development, and maintenance of a historic venue space circa 1906 in downtown San Francisco.`}
 				/>
+				<Employment
+					title={'UI Developer'}
+					employer={'Avenue Code'}
+					start={'March 2015'}
+					end={'March 2016'}
+					copy={`Developed UIs with ReactJS, Redux, Webpack, and other modern development tools. Developed stateful UI components with BackboneJS, MarionetteJS, and Sass for high profile retail clients that serve millions of customers across Macy’s.com and Bloomingdales.com.`}
+				/>
+				<Employment
+					title={'Software Developer'}
+					employer={'Say Media'}
+					start={'February 2014'}
+					end={'January 2015'}
+					copy={`Developed features for a UX-critical single page application using AngularJS, NodeJS, and open-source libraries. Worked closely with designers, QA, stakeholders, and with clientele directly to deliver an award-winning CMS publishing platform.`}
+				/>
+				<Employment
+					title={'Freelance Web Development & Design'}
+					employer={null}
+					start={'2009'}
+					end={'Present'}
+					copy={`Portfolio includes applications and websites for major brands and institutions including Stanford University, Herman Miller, Movies.com, and Sports Authority. Worked with design agencies, government organizations, consulting agencies, non-profit organizations, published novelists, and independent producers of all kinds.`}
+				/>
+				<Education/>
+				<Box margin={{ top: 'medium' }}>
+					<ContactLinks/>
+				</Box>
+				<Box
+					direction='row'
+					justify='between'
+					margin={{top: 'medium'}}
+				>
+					<DownloadResume/>
+					<ModalClose/>
+				</Box>
 			</ModalBox>
 		)
 	}

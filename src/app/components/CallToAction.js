@@ -12,11 +12,11 @@ export default class CallToAction extends Component {
 
 	handleMouseEnter = () => this.setState({ isHover: true })
 	handleMouseLeave = () => this.setState({ isHover: false })
-	handleClick = () => {
+	handleClick = (e) => {
 		const { handler } = this.props
 		// fire handler passed in from parent
-		console.log(this)
 		if (handler) {
+			e.preventDefault()
 			handler()
 		}
 	}
@@ -69,6 +69,7 @@ export default class CallToAction extends Component {
 					<Text>
 						<Anchor
 							href={url}
+							onClick={this.handleClick}
 							color={isHover ? headlineColor : sim.global.colors.neutralBlack}
 							onMouseEnter={this.handleMouseEnter}
 							onMouseLeave={this.handleMouseLeave}

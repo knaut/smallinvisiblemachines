@@ -56,7 +56,7 @@ export const sim = deepMerge(grommetTheme, {
 			darkGreen,
 			darkBlue,
 			darkPurple,
-		}
+		},
 	},
 	heading: {
 		level: {
@@ -70,6 +70,7 @@ export const sim = deepMerge(grommetTheme, {
 			}
 		}
 	}
+
 })
 
 console.log({grommetTheme, sim})
