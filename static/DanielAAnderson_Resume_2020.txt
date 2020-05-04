@@ -1,0 +1,59 @@
+Daniel A. Anderson
+daniel@smallinvisiblemachines.com
++1 (301) 675-6242
+1688 12th St. Oakland, CA 94607
+www.smallinvisiblemachines.com
+www.github.com/knaut
+
+Profile
+
+Full-stack web developer of 10+ years experience. Skills include Javascript, CSS3, HTML5, Adobe Creative Cloud Suite, and a variety of frameworks for front-end, server, mobile, and cloud applications. Strong background in user experience design.
+
+Development skillset features Javascript (ECMAScript 2015-2019), NodeJS, Babel, Webpack, React, Redux, and command line tools including git and npm. Database skills include MongoDB, Mongoose, and Redis. Server development skills include, Express, Hapi, and Koa. Additional development skills in data visualization (d3.js), responsive and progressive web apps, chrome extensions, and decentralized apps leveraging blockchain.
+
+User experience (UX) design skillset features Adobe Creative Cloud (Photoshop, Premiere, Acrobat, AfterEffects), Balsamiq Mockups, and UI prototyping tools including Storybook and Figma. Well versed in styled UI frameworks including Bootstrap and Grommet. Skilled in various CSS configurations (Sass, Less, styled-components). Experience designing and developing user experiences from rough concept to production-ready code across many devices and platforms.
+
+Hardware prototyping and internet-of-things skillset includes Single-Board Computers (SBCs) and microcontrollers such as Raspberry Pi, Arduino, and Tessel. Skilled in developing cloud-driven applications for in-the-field IoT devices in consumer, educational, and scientific settings. Experience integrating Web Sockets, Open Sound Control (OSC), and related real-time message-passing protocols across the stack.
+Comfortable in a variety of team styles. Strong ability to deal with edge cases. Loves product managers, designers, and engineers alike. A big-picture thinker who accounts for subtle details. Loves to craft excellent user experiences. Science fiction novelist.
+
+Skills
+
+Javascript (ECMAScript 2015-2019), NodeJS, ReactJS, Redux, CSS3, HTML5, Git, NPM (Node Package Manager), Webpack, Storybook, styled-components, CSS-in-JS, Sass, Less, Stylus, Grommet, Bootstrap, Core UI, Express, Hapi, Koa, MongoDB, Mongoose, Redis, Raspberry Pi, Arduino, Tessel, Heroku, Amazon Web Services (AWS), Google Cloud Platform (GCP), Terraform, Adobe Creative Cloud, Adobe Photoshop, Adobe Premiere, Adobe Acrobat, Adobe AfterEffects, Balsamiq Mockups, WebSockets, Open Sound Control (OSC), VDMX, MadMapper, MySQL (SQL), C, Rust, Linux, command line, Sublime Text, chrome extensions, progressive web apps, responsive web apps, decentralized apps, blockchain authentication
+
+Employment
+
+Senior Front-End Developer at Twitter, Inc. — Sept 2019 - March 2020
+Developed single-page web apps using React, Redux, Webpack, and related technologies for the Salesforce platform. Integrated open source technologies with proprietary frameworks (Salesforce Lightning, Visualforce) and internal APIs. Gathered, curated, and documented critical requirements from key stakeholders. Developed internal applications and workflows to solve broad user experience and automation problems that drive sales.
+
+Director of Engineering at Magnitude.IO — Oct 2018 - Sept 2019
+Developed full stack applications using NodeJS, ReactJS, and related technologies for an ed-tech platform serving K-12 students conducting experiments in low earth orbit and on the International Space Station using real-time devices. Maintained and upgraded existing codebases while guiding new feature development under a SPA and PWA strategy. Defined project goals with stakeholders and managed a small team across timezones.
+
+Co-Founder & Lead Developer at HAVYN, Inc. — Jan 2016 - Oct 2018
+Co-founded HAVYN, Inc. as Lead Developer. Developed end-to-end software architecture for consumer smart locker product. Developed cloud-based NodeJS server to manage a fleet of devices in real-time. Developed hardware prototype applications in NodeJS on Linux SBCs and embedded systems, leveraging Optical Character Recognition (OCR) and SMS messaging. Developed internal CLIs to automate key tasks and workflows. Designed and developed front-end web user experience, dashboards, and marketing websites. Designed and developed a mobile application with React Native. Guided technology solutions and developed user interactions consistent with desired brand experience.
+
+Artist in Residence — May 2016 - May 2017
+Joined artist-in-residence program at Merchants of Reality, a 501(c)3 arts-oriented nonprofit. Projects included a projection-mapped video installation at St. Patrick’s Cathedral of San Francisco; a 15' water-borne LED-lit pyramid at Symbiosis arts festival; and a full-length science fiction novel. Responsibilities during residency included: project management, volunteer management, crowdfunding, grant writing, PR, design, web development, and maintenance of a historic venue space circa 1906 in downtown San Francisco.
+
+UI Developer at Avenue Code — March 2015 - March 2016
+Developed UIs with ReactJS, Redux, Webpack, and other modern development tools. Developed stateful UI components with BackboneJS, MarionetteJS, and Sass for high profile retail clients that serve millions of customers across Macy’s.com and Bloomingdales.com.
+
+Software Developer at Say Media — February 2014 - January 2015
+Developed features for a UX-critical single page application using AngularJS, NodeJS, and open-source libraries. Worked closely with designers, QA, stakeholders, and with clientele directly to deliver an award-winning CMS publishing platform.
+
+Freelance Web Development & Design — 2009 to Present
+Portfolio includes applications and websites for major brands and institutions including Stanford University, Herman Miller, Movies.com, and Sports Authority. Worked with design agencies, government organizations, consulting agencies, non-profit organizations, published novelists, and independent producers of all kinds.
+
+Education
+
+Maryland Institute College of Art — 2006 - 2008
+Painting Major, Creative Writing Minor
+
+Achievements
+
+Maryland Distinguished Scholar — 2005 — State Scholarship
+Independently Published Novel — 2018 — “Children of Vale” as D. A. Anderson
+
+References
+
+www.linkedin.com/in/danielanderson
+Phone and written references available on request

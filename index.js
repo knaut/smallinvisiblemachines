@@ -37,8 +37,31 @@ const start = async () => {
 		method: 'GET',
 		path: '/',
 		handler: (request, h) => {
-
 			return h.response(html)
+		}
+	});
+
+	server.route({
+		method: 'GET',
+		path: '/resume-pdf',
+		handler: (request, h) => {
+			return h.file('./static/DanielAAnderson_Resume_2020.pdf', { mode: 'attachment' })
+		}
+	});
+
+	server.route({
+		method: 'GET',
+		path: '/resume-doc',
+		handler: (request, h) => {
+			return h.file('./static/DanielAAnderson_Resume_2020.docx', { mode: 'attachment' })
+		}
+	});
+
+	server.route({
+		method: 'GET',
+		path: '/resume-txt',
+		handler: (request, h) => {
+			return h.file('./static/DanielAAnderson_Resume_2020.txt', { mode: 'attachment' })
 		}
 	});
 
