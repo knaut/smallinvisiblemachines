@@ -162,17 +162,17 @@ function DownloadResume() {
 		    { 
 		     label: <Box alignSelf='center'>PDF</Box>,
 		     icon: <Box pad='xsmall'><DocumentPdf/></Box>,
-		     onClick: () => {} 
+		     onClick: () => { window.location.pathname = '/resume-pdf' } 
 		    },
 		    { 
 		     label: <Box alignSelf='center'>Word Doc</Box>,
 		     icon: <Box pad='xsmall'><DocumentWord/></Box>,
-		     onClick: () => {} 
+		     onClick: () => { window.location.pathname = '/resume-doc' }
 		    },
 		    { 
 		     label: <Box alignSelf='center'>Plain Text</Box>,
 		     icon: <Box pad='xsmall'><DocumentTxt/></Box>,
-		     onClick: () => {} 
+		     onClick: () => { window.location.pathname = '/resume-txt' }
 		    }
 		  ]}
 		/>
