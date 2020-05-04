@@ -39,7 +39,7 @@ function Profile() {
 				margin={{ bottom: 'xsmall' }}
 				css={`
 					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed;
+					font-family: Acumin Pro ExtraCondensed, Acumin Pro ExtraCondensed Medium;
 				`}
 			>Profile</Heading>
 			<Box margin={{bottom: 'small'}}>
@@ -69,7 +69,7 @@ function Skills() {
 				margin={{ bottom: 'xsmall' }} 
 				css={`
 					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed;
+					font-family: Acumin Pro ExtraCondensed Medium;
 				`}
 			>Skills</Heading>
 			<ul css={'margin: 0; padding: 0;'}>
@@ -227,7 +227,7 @@ function Header() {
 				size='large'
 				margin={{bottom: 'xxsmall'}}
 				css={`
-				font-family: Acumin Pro ExtraCondensed Black;
+				font-family: Acumin Pro ExtraCondensed Black, Acumin Pro ExtraCondensed Bold, Helvetica Neue, Helvetica, sans-serif;
 			`}>
 				Daniel Anderson
 			</Heading>
@@ -252,7 +252,7 @@ function Education() {
 				margin={{ bottom: 'xsmall' }}
 				css={`
 					font-weight: 600;
-					font-family: Acumin Pro ExtraCondensed;
+					font-family: Acumin Pro ExtraCondensed Medium, Helvetica Neue, Helvetica, sans-serif;
 				`}
 			>
 				Education
