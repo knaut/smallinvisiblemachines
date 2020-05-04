@@ -57,7 +57,7 @@ function Splash() {
 	)
 }
 
-function App() {
+export default function App() {
 	return (
 		<Provider store={store}>
 			<ConnectedRouter history={history}>

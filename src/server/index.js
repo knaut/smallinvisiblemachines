@@ -1,7 +1,9 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
-const renderRoute = require('./utils/renderRoute')
+const React = require('react')
+const app = require('../app/index.js')
+const string = React.renderToString(app)
 
 const start = async () => {
 	const server = Hapi.server({
@@ -13,8 +15,7 @@ const start = async () => {
 		method: 'GET',
 		path: '/',
 		handler: (request, h) => {
-			const html = renderRoute()
-			return h.response(html)
+			return h.response(string)
 		}
 	});
 

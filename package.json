@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npx webpack-dev-server --config webpack.local.js",
     "storybook": "npx start-storybook -p 6006",
-    "server": "node ./src/server"
+    "server": "node ./src/server/build",
+    "server-build": "npx babel --config-file ./babel-config.js -d ./build ./src/server -s"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
@@ -16,6 +17,7 @@
     "moment": "^2.24.0",
     "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
+    "react-router-config": "^5.1.1",
     "react-text-transition": "^1.0.2",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -23,7 +25,8 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
