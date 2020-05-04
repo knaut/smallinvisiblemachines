@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "npx webpack-dev-server --config webpack.local.js",
+    "build": "npx webpack --config webpack.production.js",
     "storybook": "npx start-storybook -p 6006",
-    "server": "node ./src/server/build",
-    "server-build": "npx babel --config-file ./babel-config.js -d ./build ./src/server -s"
+    "server": "node ./build/app.js",
+    "server-build": "npx babel --config-file ./babel-config.js -d ./build ./src -s"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
     "connected-react-router": "^6.8.0",
     "grommet": "^2.12.0",
     "grommet-icons": "^4.4.0",
