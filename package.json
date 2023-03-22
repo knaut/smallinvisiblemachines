@@ -1,0 +1,11 @@
+{
+  "name": "smallinvisiblemachines",
+  "version": "1.0.0",
+  "description": "Professional contact and resume website for me, Daniel A. Anderson.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
