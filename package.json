@@ -8,7 +8,11 @@
     "storybook": "npx start-storybook -p 6006",
     "server": "node ./build/app.js"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
+    "@emotion/css": "^11.10.6",
     "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^6.0.1",
     "connected-react-router": "^6.8.0",
@@ -23,6 +27,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "standard": "^14.3.3",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   }
 }
