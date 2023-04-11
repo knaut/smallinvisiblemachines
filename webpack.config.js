@@ -11,7 +11,8 @@ module.exports = {
   },
   resolve: {
     extensions: ['.mjs', '.js', '.svelte', '.sv'],
-    mainFields: ['svelte', 'browser', 'module', 'main']
+    mainFields: ['svelte', 'browser', 'module', 'main'],
+    conditionNames: ['svelte']
   },
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -21,14 +22,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.svelte$/,
+        test: /\.sv.*$/,
+        // test: /\.svelte$/,
         // test: /\.sv$/,
         use: {
           loader: 'svelte-loader',
           options: {
-            emitCss: true,
-            hotReload: true,
-            dev: !prod
+            // emitCss: true,
+            // hotReload: true,
+            // dev: !prod
+            compilerOptions: {
+              dev: !prod
+            },
+            emitCss: prod,
+            hotReload: !prod
           }
         }
       },
@@ -38,6 +45,13 @@ module.exports = {
           prod ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader'
         ]
+      },
+      {
+        // required to prevent errors from Svelte on Webpack 5+
+        test: /node_modules\/svelte\/.*\.mjs$/,
+        resolve: {
+          fullySpecified: false
+        }
       }
     ]
   },
