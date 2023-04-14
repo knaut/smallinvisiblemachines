@@ -1,9 +1,8 @@
 import './global.css'
 import App from './App.svelte'
 
-const app = ( function() {
-    return new App({
-        target: document.body
-    })
-})()
+const app = new App({
+  target: document.getElementById('app'),
+})
+
 export default app
