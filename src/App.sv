@@ -16,7 +16,7 @@
 
       <div id="cta">
         <a href="mailto:daniel@smallinvisiblemachines.com">Contact</a>
-        <a href="/resume">Resume</a>
+        <a href="/resume.docx">Resume</a>
       </div>
 
     </div>
