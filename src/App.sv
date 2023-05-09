@@ -92,6 +92,10 @@
     fill: #455059;
   }
 
+  :global(#title svg) {
+    width: 560px;
+  }
+
   :global(#logo svg) {
     width: 420px;
     margin-bottom: 50px;
@@ -99,6 +103,38 @@
 
   :global(#logo svg path) {
     fill: #455059;
+  }
+
+  /* MOBILE BREAKPOINTS */
+  /* 627px width and below */
+  @media screen and (max-width: 627px) {
+    :global(#title svg) {
+      width: 100%;
+    }
+
+    :global(#logo svg) {
+      width: 100%;
+    }
+
+    /*:global(#cta) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }*/
+
+    :global(
+      #cta a
+    ) {
+      font-size: 18px !important;
+    }
+
+    /*:global(
+      #cta a:last-child
+    ) {
+      margin-top: 9px;
+    }*/
+
+
   }
 
 </style>
