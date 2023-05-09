@@ -75,7 +75,7 @@
   #cta a:hover,
   #cta a:active,
   #cta a:visited {
-    font-family: Arial Black;
+    font-family: Arial Black, Arial, sans-serif;
     font-size: 28px;
 
     text-transform: uppercase;
