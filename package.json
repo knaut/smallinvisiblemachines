@@ -1,14 +1,15 @@
 {
   "name": "smallinvisiblemachines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
+  "private": true,
   "type": "module",
   "scripts": {
-    "server": "node ./server.cjs",
-    "dev": "vite",
+    "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "postinstall": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "serve-heroku": "vite --host 0.0.0.0 --port $PORT preview"
   },
   "engines": {
@@ -17,9 +18,24 @@
   },
   "author": "knaut",
   "license": "ISC",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.0",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/svelte": "^8.1.11",
+    "@storybook/sveltekit": "^8.1.11",
+    "@storybook/test": "^8.1.11",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "storybook": "^8.1.11",
+    "svelte": "^4.2.7",
+    "vite": "^5.0.3"
+  },
   "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.0.3",
-    "svelte": "^3.55.1",
-    "vite": "^4.2.0"
+    "animejs": "^3.2.2",
+    "d3": "^7.9.0"
   }
 }
