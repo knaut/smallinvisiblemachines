@@ -1,7 +1,7 @@
 <script>
   import Heartwood from './components/Heartwood/index.svelte'
   import Header from './components/Header/index.svelte'
-
+  import Hello from './components/Hello/index.svelte'
   // import { onMount } from 'svelte'
 </script>
 <div id="app">
@@ -13,6 +13,7 @@
     <Heartwood/>
 
   </div>
+  <Hello/>
 </div>
 <style>
   :global(body) {

@@ -159,6 +159,19 @@
     }
   }
 
+
+/*    .test { background: #2965f1; }*/
+/*    .test { background: #cd669a; }*/
+/*    .test { background: #f06529; }*/
+/*    .test { background: #f0db4f; }*/
+/*    .test { background: #61dafb; }*/
+/*    .test { background: #ff3e00; }*/
+/*    .test { background: #0AEBA3; }*/
+/*    .test { background: #3178c6; }*/
+/*    .test { background: #8bc500; }*/
+/*    .test { background: #0AFDBA; }*/
+  
+
 </style>
 
 
