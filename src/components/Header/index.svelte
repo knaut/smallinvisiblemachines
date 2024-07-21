@@ -75,6 +75,10 @@
   #global {
     height: 100px;
 
+    position: relative;
+    z-index: 60;
+    background: #fff;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,6 +118,8 @@
     height: 3px;
     background: #999;
     width: 0%;
+    position: relative;
+    z-index: 60;
   }
 
   #typeface svg {
