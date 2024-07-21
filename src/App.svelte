@@ -76,4 +76,21 @@
     animation-fill-mode: forwards;
   }
 
+  @keyframes heartwoodContainerEnter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #heartwood {
+    animation-name: heartwoodContainerEnter;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
 </style>

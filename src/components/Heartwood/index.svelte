@@ -44,7 +44,7 @@
     // Angular: '#0AEBA3',
     TypeScript: '#3178c6',
     NodeJS: '#8bc500',
-    Storybook: '#0AFDBA',
+    Storybook: '#ff4785',
   }
 
   const skills = {
@@ -52,49 +52,41 @@
     { skill: 'CSS', duration: [0, 7] },
     { skill: 'HTML', duration: [0, 7] },
     { skill: 'Javascript', duration: [0, 7] },
-    { skill: 'NodeJS', duration: [4, 7] },
+    { skill: 'SCSS', duration: [0, 5] },
+    { skill: 'NodeJS', duration: [0, 7] },
     { skill: 'React', duration: [0,5] },
+    { skill: 'Storybook', duration: [[0, 4], [5, 7]] },
     { skill: 'Svelte', duration: [[0, 5], [6, 7]] },
     { skill: 'TypeScript', duration: [[0, 5], [6, 7]] },
-    { skill: 'SCSS', duration: [0, 5] },
-    // { skill: 'Angular', duration: [0, 4] },
-    { skill: 'Storybook', duration: [[0, 4], [5, 7]] }
   ],
   '2023': [
     { skill: 'CSS', duration: [0, 12] },
     { skill: 'HTML', duration: [0, 12] },
     { skill: 'Javascript', duration: [0, 12] },
+    { skill: 'SCSS', duration: [0, 8] },
     { skill: 'NodeJS', duration: [7, 12] },
     { skill: 'React', duration: [0, 11] },
+    { skill: 'Storybook', duration: [0, 6] },
     { skill: 'Svelte', duration: [8, 11] },
     { skill: 'TypeScript', duration: [7, 12] },
-    { skill: 'SCSS', duration: [0, 8] },
-    // { skill: 'Angular', duration: [0, 5] },
-    { skill: 'Storybook', duration: [0, 6] },
   ],
   '2022': [
     { skill: 'CSS', duration: [0, 12] },
     { skill: 'HTML', duration: [0, 12] },
     { skill: 'Javascript', duration: [0, 12] },
+    { skill: 'SCSS', duration: [0, 7] },
     { skill: 'NodeJS', duration: [0, 12] },
     { skill: 'React', duration: [0, 11] },
-    // { skill: 'Svelte', duration: [8, 11] },
-    // { skill: 'TypeScript', duration: [7, 12] },
-    { skill: 'SCSS', duration: [0, 7] },
-    // { skill: 'Angular', duration: [0, 5] },
     { skill: 'Storybook', duration: [7, 12] },
   ],
   '2021': [
     { skill: 'CSS', duration: [0, 12] },
     { skill: 'HTML', duration: [0, 12] },
     { skill: 'Javascript', duration: [0, 12] },
+    { skill: 'SCSS', duration: [0, 12] },
     { skill: 'NodeJS', duration: [0, 12] },
     { skill: 'React', duration: [0, 12] },
-    // { skill: 'Svelte', duration: [8, 11] },
-    // { skill: 'TypeScript', duration: [7, 12] },
-    { skill: 'SCSS', duration: [0, 12] },
-    // { skill: 'Angular', duration: [0, 5] },
-    // { skill: 'Storybook', duration: [7, 12] },
+    
   ]
 }
 
@@ -199,6 +191,8 @@
               .attr('d', arcGen)
               .attr('fill', colors[skill])
               .attr('class', skill)
+              // .attr('stroke-width', 1)
+              // .attr('stroke', '#ddd')
             
           }
 
@@ -226,6 +220,8 @@
             .attr('d', arcGen)
             .attr('fill', colors[skill])
             .attr('class', skill)
+            // .attr('stroke-width', 1)
+            // .attr('stroke', '#ddd')
 
         }
 
@@ -240,7 +236,7 @@
 
 <ul id="skill-list">
   {#each skillList as skill, i}
-    <li 
+    <li id="{skill}"
       on:mouseenter={e => {
         // console.log(e.target, skill)
         d3.selectAll(`path.${skill}`)
@@ -274,6 +270,8 @@
         scale({1 + (s * (skillData.length * (.0001 * (Math.abs(perspX) + Math.abs(perspY)) ) ))});
 
     ">
+      <div class="svg-label">{yearKey}</div>
+
       {#each skillData as skill, i}
         
         {#if Array.isArray(skill.duration[0])}
@@ -315,6 +313,12 @@
     position: absolute;
     width: 100vh; /* set to vw to expand to full-width below the fold */
     height: 100vh;
+  }
+
+  .svg-label {
+    position: absolute;
+    top: 125px;
+    left: 0;
   }
 
   .container {
@@ -377,7 +381,58 @@
     transition: all 0.5s ease-in-out;
   }
 
-  :global(path) {
+  :global(#heartwood path) {
     transition: 0.2s fill ease-in-out;
   }
+
+
+  #skill-list li:after {
+    content: '';
+    height: 25px;
+    width: 25px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: 20px 20px;
+    background-position: center bottom;
+  }
+
+  #CSS:after {
+    background: url(./icons/css.svg) no-repeat;
+  }
+
+  #SCSS:after {
+    background: url(./icons/scss.svg) no-repeat;
+  }
+
+  #HTML:after {
+    background: url(./icons/html.svg) no-repeat;
+  }
+
+  #Javascript:after {
+    background: url(./icons/js.svg) no-repeat;
+  }
+
+  #React:after {
+    background: url(./icons/react.svg) no-repeat;
+  }
+
+  #Svelte:after {
+    background: url(./icons/svelte.svg) no-repeat;
+  }
+
+  #TypeScript:after {
+    background: url(./icons/ts.svg) no-repeat;
+  }
+
+  #NodeJS:after {
+    background: url(./icons/node.svg) no-repeat;
+  }
+
+  #Storybook:after {
+    background: url(./icons/storybook.svg) no-repeat;
+  }
+
+
 </style>
