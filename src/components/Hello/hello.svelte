@@ -76,7 +76,7 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
-    margin: 40px 0 0 40px;
+/*    margin: 40px 0 0 40px;*/
   }
 
   #hello-wrap svg {}
