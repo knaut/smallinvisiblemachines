@@ -18,21 +18,76 @@
     */
 
 
-    anime({
-      targets: '.hello-text-bg',
-      width: '100%',
-      duration: 1000,
+//     anime({
+//       targets: '.hello-text-bg',
+//       width: '100%',
+//       duration: 1000,
+//       easing: 'easeInOutQuad',
+//       delay: 100
+//     })
+// 
+//     anime({
+//       targets: '.hello-text-bg',
+//       left: '100%',
+//       duration: 1000,
+//       easing: 'easeInOutQuad',
+//       delay: 1100
+//     })
+
+    
+    const t1 = anime.timeline({
       easing: 'easeInOutQuad',
-      delay: 100
+      duration: 1000
     })
 
-    anime({
-      targets: '.hello-text-bg',
-      left: '100%',
-      duration: 1000,
+    const t2 = anime.timeline({
       easing: 'easeInOutQuad',
-      delay: 1100
+      duration: 1000
     })
+
+    const t3 = anime.timeline({
+      easing: 'easeInOutQuad',
+      duration: 1000
+    })
+
+
+    setTimeout(() => {
+      t1.add({
+        targets: '#first',
+        width: '100%',
+      }).add({
+        targets: '#first',
+        left: '100%',
+      })
+    }, 1000)
+
+    setTimeout(() => {
+
+      t2.add({
+        targets: '#second',
+        width: '100%',
+      }).add({
+        targets: '#second',
+        left: '100%',
+      })
+
+    }, 2000)
+
+    setTimeout(() => {
+
+      t3.add({
+        targets: '#third',
+        width: '100%',
+      }).add({
+        targets: '#third',
+        left: '100%',
+      })
+
+    }, 3000)
+
+    
+
+    
 
   })
 </script>
@@ -43,19 +98,19 @@
     <div>
       <p>
         <span class="hello-text-inline">I'm Daniel, a web developer with over a decade of experience.</span>
-        <span class="hello-text-bg"></span>
+        <span id="first" class="hello-text-bg"></span>
       </p>
     </div>
     <div>
       <p>
         <span class="hello-text-inline">I've worked with companies small and large, and love to push the boundaries of what's possible on the web.</span>
-        <span class="hello-text-bg"></span>
+        <span id="second" class="hello-text-bg"></span>
       </p>
     </div>
     <div>
       <p>
         <span class="hello-text-inline">Let's build something amazing together!</span>
-        <span class="hello-text-bg"></span>
+        <span id="third" class="hello-text-bg"></span>
       </p>
     </div>
   </div>
@@ -63,7 +118,7 @@
 
 <style>
 
-  @keyframes wipe {
+  @keyframes opacityDelay {
     0% {
       opacity: 0;
     }
@@ -107,12 +162,21 @@
 
     opacity: 0;
 
-    animation-name: wipe;
+    animation-name: opacityDelay;
     animation-duration: .01s;
-    animation-delay: 1.1s;
     animation-fill-mode: forwards;
+  }
 
+  #hello-text > div:nth-child(1) .hello-text-inline {
+    animation-delay: 2.1s;
+  }
 
+  #hello-text > div:nth-child(2) .hello-text-inline {
+    animation-delay: 3.1s;
+  }
+
+  #hello-text > div:nth-child(3) .hello-text-inline {
+    animation-delay: 4.1s;
   }
 
   .hello-text-bg {
@@ -127,6 +191,37 @@
 
     background: #fff;
 
+/*    animation-name: wipe;*/
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  #hello-text > div:nth-child(1) .hello-text-bg {
+    animation-delay: 2.1s;
+  }
+
+  #hello-text > div:nth-child(2) .hello-text-bg {
+    animation-delay: 3.1s;
+  }
+
+  #hello-text > div:nth-child(3) .hello-text-bg {
+    animation-delay: 4.1s;
+  }
+
+  @keyframes wipe {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    51% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
   }
 
 
