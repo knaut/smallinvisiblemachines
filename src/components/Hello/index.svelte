@@ -5,85 +5,102 @@
 
   onMount(() => {
 
-    /*
-    const spans = document.querySelectorAll('#hello-text span')
-
-    anime({
-      targets: spans,
-      left: '100%',
-      duration: 1000,
-      easing: 'easeInOutQuad',
-      delay: 1100
-    })
-    */
-
-
-//     anime({
-//       targets: '.hello-text-bg',
-//       width: '100%',
-//       duration: 1000,
-//       easing: 'easeInOutQuad',
-//       delay: 100
-//     })
-// 
-//     anime({
-//       targets: '.hello-text-bg',
-//       left: '100%',
-//       duration: 1000,
-//       easing: 'easeInOutQuad',
-//       delay: 1100
-//     })
-
+    const hello = document.getElementById('hello')
+    const elHeight = hello.scrollHeight
     
-    const t1 = anime.timeline({
-      easing: 'easeInOutQuad',
-      duration: 1000
+    let hasRun = false;
+
+
+    window.addEventListener('scroll', e => {
+      const winScroll = window.scrollY
+
+      // console.log(elHeight, winScroll)
+
+      if (winScroll >= elHeight / 2 ) {
+
+        if (hasRun === false) {
+
+          console.log('animate')
+
+
+          hasRun = true;
+
+          hello.classList.add('animate')
+
+          anime({
+            targets: '#hello-bg',
+            width: '100%',
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            delay: 100
+          })
+
+          anime({
+            targets: '#hello-bg',
+            left: '100%',
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            delay: 1100
+          })
+
+          const t1 = anime.timeline({
+            easing: 'easeInOutQuad',
+            duration: 1000
+          })
+
+          const t2 = anime.timeline({
+            easing: 'easeInOutQuad',
+            duration: 1000
+          })
+
+          const t3 = anime.timeline({
+            easing: 'easeInOutQuad',
+            duration: 1000
+          })
+
+
+          setTimeout(() => {
+            t1.add({
+              targets: '#first',
+              width: '100%',
+            }).add({
+              targets: '#first',
+              left: '100%',
+            })
+          }, 1000)
+
+          setTimeout(() => {
+
+            t2.add({
+              targets: '#second',
+              width: '100%',
+            }).add({
+              targets: '#second',
+              left: '100%',
+            })
+
+          }, 2000)
+
+          setTimeout(() => {
+
+            t3.add({
+              targets: '#third',
+              width: '100%',
+            }).add({
+              targets: '#third',
+              left: '100%',
+            })
+
+          }, 3000)
+
+        }
+
+
+
+      }
     })
-
-    const t2 = anime.timeline({
-      easing: 'easeInOutQuad',
-      duration: 1000
-    })
-
-    const t3 = anime.timeline({
-      easing: 'easeInOutQuad',
-      duration: 1000
-    })
-
-
-    setTimeout(() => {
-      t1.add({
-        targets: '#first',
-        width: '100%',
-      }).add({
-        targets: '#first',
-        left: '100%',
-      })
-    }, 1000)
-
-    setTimeout(() => {
-
-      t2.add({
-        targets: '#second',
-        width: '100%',
-      }).add({
-        targets: '#second',
-        left: '100%',
-      })
-
-    }, 2000)
-
-    setTimeout(() => {
-
-      t3.add({
-        targets: '#third',
-        width: '100%',
-      }).add({
-        targets: '#third',
-        left: '100%',
-      })
-
-    }, 3000)
+    
+    
 
     
 
@@ -165,6 +182,7 @@
     animation-name: opacityDelay;
     animation-duration: .01s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
   }
 
   #hello-text > div:nth-child(1) .hello-text-inline {
@@ -190,11 +208,10 @@
     right: 0;
 
     background: #fff;
+  }
 
-/*    animation-name: wipe;*/
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
+  :global(#hello.animate .hello-text-inline) {
+    animation-play-state: running;
   }
 
   #hello-text > div:nth-child(1) .hello-text-bg {

@@ -16,28 +16,28 @@
 //       delay: (el, i) => { return i * 500 }
 //     });
 
-    anime({
-      targets: '#hello-bg',
-      width: '100%',
-      duration: 1000,
-      easing: 'easeInOutQuad',
-      delay: 100
-    })
+//     anime({
+//       targets: '#hello-bg',
+//       width: '100%',
+//       duration: 1000,
+//       easing: 'easeInOutQuad',
+//       delay: 100
+//     })
+// 
+//     anime({
+//       targets: '#hello-bg',
+//       left: '100%',
+//       duration: 1000,
+//       easing: 'easeInOutQuad',
+//       delay: 1100
+//     })
 
-    anime({
-      targets: '#hello-bg',
-      left: '100%',
-      duration: 1000,
-      easing: 'easeInOutQuad',
-      delay: 1100
-    })
-
-    window.addEventListener('scroll', e => {
-      const body = document.querySelector('body')
-
-      const el = document.querySelector('#hello-wrap')
-      console.log(body.scrollTop, el.scrollTop)
-    })
+//     window.addEventListener('scroll', e => {
+//       const body = document.querySelector('body')
+// 
+//       const el = document.querySelector('#hello-wrap')
+//       console.log(el.scrollTop)
+//     })
 
   })
 </script>
@@ -70,6 +70,11 @@
     animation-delay: 1.1s;
     opacity: 0;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
+  }
+
+  :global(#hello.animate #hello-path) {
+    animation-play-state: running;
   }
 
   #hello-wrap {
