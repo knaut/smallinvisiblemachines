@@ -2,6 +2,9 @@
   import Heartwood from './components/Heartwood/index.svelte'
   import Header from './components/Header/index.svelte'
   import Hello from './components/Hello/index.svelte'
+  import Footer from './components/Footer/index.svelte'
+  
+
   // import { onMount } from 'svelte'
 </script>
 <div id="app">
@@ -14,6 +17,7 @@
 
   </div>
   <Hello/>
+  <Footer/>
 </div>
 <style>
   :global(body) {

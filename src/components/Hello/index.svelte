@@ -2,6 +2,11 @@
   import { onMount } from 'svelte'
   import anime from 'animejs'
   import Hello from './hello.svelte'
+  import profile from './profile_photo.jpg'
+
+  import Paperplane from '../Icons/paperplane.svelte'
+  import Resume from '../Icons/resume.svelte'
+  import Github from '../Icons/github.svelte'
 
   onMount(() => {
 
@@ -20,12 +25,28 @@
 
         if (hasRun === false) {
 
-          console.log('animate')
+          // console.log('animate')
 
 
           hasRun = true;
 
           hello.classList.add('animate')
+
+          anime({
+            targets: '#hello img',
+            translateY: '150px',
+            duration: 3000,
+            opacity: 1,
+            filter: 'blur(0px)'
+          })
+
+          anime({
+            targets: '#hello img',
+            easing: 'easeInOutQuad',
+            duration: 1500,
+            opacity: 1,
+            filter: 'blur(0px)'
+          })
 
           anime({
             targets: '#hello-bg',
@@ -111,6 +132,7 @@
 
 <div id="hello">
   <Hello/>
+  <img src={profile} alt="Daniel A. Anderson"/>
   <div id="hello-text">
     <div>
       <p>
@@ -131,6 +153,30 @@
       </p>
     </div>
   </div>
+
+  <div id="calls-to-action">
+    <ul>
+      <li>
+        <div class="icon">
+          <Resume/>
+        </div>
+        <span>check my resume</span>
+      </li>
+      <li> 
+        <div class="icon">
+          <Github/>
+        </div>
+        <span>check my github</span>
+      </li>
+      <li>
+        <div class="icon">
+          <Paperplane/>
+        </div>
+        <span>get in touch with me</span>
+      </li>
+    </ul>
+  </div>
+  
 </div>
 
 <style>
@@ -156,6 +202,22 @@
     background: #000;
     padding: 9% 18% 0 18%;
     box-sizing: border-box;
+    position: relative;
+  }
+
+  #hello img {
+/*    float: right;*/
+    position: absolute;
+    top: 4.5%;
+    right: 18%;
+    z-index: 54;
+    height: 500px;
+/*    border-radius: 100%;*/
+    clip-path: circle(40%);
+    z-index: 2;
+    opacity: 0;
+    filter: blur(20px);
+    margin-top: -100px;
   }
 
   #hello p {
@@ -168,6 +230,8 @@
   #hello-text {
     margin-top: 30px;
     margin-left: 30px;
+    position: relative;
+    z-index: 3;
   }
 
   .hello-text-inline {
@@ -183,6 +247,8 @@
     animation-duration: .01s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
+
+    text-shadow: 3px -3px 4px #000, -3px 3px 4px #000;
   }
 
   #hello-text > div:nth-child(1) .hello-text-inline {
@@ -242,5 +308,37 @@
   }
 
 
+  #calls-to-action {
+    color: #fff;
+    position: relative;
+/*    left: 66%;*/
+float: right;
+  }
+
+  #calls-to-action .icon {
+    width: 50px;
+    display: inline-block;
+  }
+
+  #calls-to-action ul {
+    display: flex;
+  }
+
+  #calls-to-action li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    font-family: serif;
+/*    text-transform: capitalize;*/
+    font-style: italic;
+    font-size: 21px;
+    margin-right: 30px;
+  }
+
+  #calls-to-action span {
+    display: inline-block;
+    margin-left: 15px;
+  }
 
 </style>

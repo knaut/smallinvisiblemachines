@@ -96,13 +96,13 @@
     display: none;
   }
 
-  :global(#global #logo) {
+  :global(#global .logo) {
     height: 100px;
     padding: 10px;
     box-sizing: border-box;
   }
 
-  :global(#global #logo path) {
+  :global(#global .logo path) {
     fill: #566;
   }
 
