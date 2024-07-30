@@ -79,6 +79,10 @@
             duration: 1000
           })
 
+          const icons = anime.timeline({
+            // easing: 'easeInOutQuad',
+            duration: 600
+          })
 
           setTimeout(() => {
             t1.add({
@@ -113,6 +117,24 @@
             })
 
           }, 3000)
+
+          setTimeout(() => {
+
+            icons.add({
+              targets: '#calls-to-action li:nth-child(1)',
+              opacity: 1,
+              left: '0'
+            }).add({
+              targets: '#calls-to-action li:nth-child(2)',
+              opacity: 1,
+              left: '0'
+            }).add({
+              targets: '#calls-to-action li:nth-child(3)',
+              opacity: 1,
+              left: '0'
+            })
+
+          }, 4800)
 
         }
 
@@ -157,22 +179,34 @@
   <div id="calls-to-action">
     <ul>
       <li>
-        <div class="icon">
-          <Resume/>
-        </div>
-        <span>check my resume</span>
+        <a href="#">
+          <span class="cta-inner-wrap">
+            <span class="icon">
+              <Resume/>
+            </span>
+            <span>check my resume</span>
+          </span>
+        </a>
       </li>
       <li> 
-        <div class="icon">
-          <Github/>
-        </div>
-        <span>check my github</span>
+        <a href="#">
+          <span class="cta-inner-wrap">
+            <span class="icon">
+              <Github/>
+            </span>
+            <span>check my github</span>
+          </span>
+        </a>
       </li>
       <li>
-        <div class="icon">
-          <Paperplane/>
-        </div>
-        <span>get in touch with me</span>
+        <a href="#">
+          <span class="cta-inner-wrap">
+            <span class="icon">
+              <Paperplane/>
+            </span>
+            <span>get in touch with me</span>
+          </span>
+        </a>
       </li>
     </ul>
   </div>
@@ -310,9 +344,7 @@
 
   #calls-to-action {
     color: #fff;
-    position: relative;
-/*    left: 66%;*/
-float: right;
+    float: right;
   }
 
   #calls-to-action .icon {
@@ -326,14 +358,51 @@ float: right;
 
   #calls-to-action li {
     list-style: none;
-    display: flex;
-    align-items: center;
 
     font-family: serif;
 /*    text-transform: capitalize;*/
     font-style: italic;
     font-size: 21px;
     margin-right: 30px;
+
+    opacity: 0;
+
+/*    transform: translateX(-100px);*/
+    position: relative;
+    left: -200px;
+  }
+
+  #calls-to-action a {
+/*    display: flex;*/
+    
+  }
+
+  #calls-to-action .cta-inner-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  #calls-to-action a:link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  #calls-to-action a:link .cta-inner-wrap {
+    position: relative;
+    top: 0;
+    transition: 0.25s all ease-in-out;
+  }
+
+  #calls-to-action a:hover .cta-inner-wrap {
+    top: -20px;
+  }
+
+  #calls-to-action a:hover {
+    color: cyan;
+  }
+
+  :global(#calls-to-action a:hover path) {
+    fill: cyan !important;
   }
 
   #calls-to-action span {
