@@ -189,7 +189,7 @@
         </a>
       </li>
       <li> 
-        <a href="#">
+        <a href="https://github.com/knaut">
           <span class="cta-inner-wrap">
             <span class="icon">
               <Github/>
@@ -199,7 +199,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="mailto:daniel@smallinvisiblemachines.com">
           <span class="cta-inner-wrap">
             <span class="icon">
               <Paperplane/>
@@ -382,7 +382,7 @@
     align-items: center;
   }
 
-  #calls-to-action a:link {
+  #calls-to-action a:link, #calls-to-action a:visited, #calls-to-action a:active {
     text-decoration: none;
     color: #fff;
   }

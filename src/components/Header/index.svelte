@@ -19,7 +19,7 @@
       })
 
       anime({
-        targets: '#logo',
+        targets: '#global .logo',
         opacity: [0, 1],
         duration: 10000,
         delay: 1000

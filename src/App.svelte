@@ -3,7 +3,7 @@
   import Header from './components/Header/index.svelte'
   import Hello from './components/Hello/index.svelte'
   import Footer from './components/Footer/index.svelte'
-  
+  import Resume from './components/Resume/index.svelte'  
 
   // import { onMount } from 'svelte'
 </script>
@@ -17,6 +17,7 @@
 
   </div>
   <Hello/>
+  <Resume/>
   <Footer/>
 </div>
 <style>
