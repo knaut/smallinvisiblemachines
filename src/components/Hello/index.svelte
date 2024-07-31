@@ -233,7 +233,7 @@
   #hello {
     min-height: 100vh;
     width: 100%;
-    background: #000;
+    background: var(--dark2);
     padding: 9% 18% 0 18%;
     box-sizing: border-box;
     position: relative;

@@ -103,12 +103,12 @@
   }
 
   :global(#global .logo path) {
-    fill: #566;
+    fill: var(--gray);
   }
 
   #bubble-profile {
     height: 80px;
-    border: 2px solid #333;
+    border: 2px solid var(--dark4);
     border-radius: 100%;
     position: relative;
     left: 150px;
@@ -116,7 +116,7 @@
 
   #divider {
     height: 3px;
-    background: #999;
+    background: var(--gray);
     width: 0%;
     position: relative;
     z-index: 60;
@@ -131,11 +131,11 @@
   }
 
   #typeface h2 {
-    color: #566;
+    color: var(--gray);
   }
 
   :global(#typeface path) {
-    fill: #566;
+    fill: var(--gray);
   }
 
   h2 {

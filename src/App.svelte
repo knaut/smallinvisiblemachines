@@ -21,6 +21,29 @@
   <Footer/>
 </div>
 <style>
+  :root {
+    --white: #fff;
+    --bright1: #f5f8ff;
+    --bright2: #f1f5ff;
+    --bright3: #eaf0ff;
+    --bright4: #dfeafe;
+
+    --gray: #555f73;
+
+    --black: #000000;
+    --dark1: #00030a;
+    --dark2: #00040e;
+    --dark3: #000615;
+    --dark4: #010c20;
+
+    --teal: #07223C;
+    --teal1: #2B4C69;
+    --teal2: #486C85;
+    --teal3: #698EA0;
+    --teal4: #90ADBA;
+  }
+
+
   :global(body) {
     padding: 0;
     margin: 0;
@@ -33,9 +56,9 @@
     position: relative; 
     z-index: 10;
 
-    background-image: -webkit-gradient(radial, center center, 0, center center, 220, from(#fff), to(#e6e8eb));
-    background-image: -webkit-radial-gradient(#fff, #e6e8eb);
-    background-image: radial-gradient(#fff, #e6e8eb);
+    background-image: -webkit-gradient(radial, center center, 0, center center, 220, from( var(--white )), to( var(--bright4) ));
+    background-image: -webkit-radial-gradient( var(--white ), var(--bright4) );
+    background-image: radial-gradient( var(--white ), var(--bright4) );
 
     height: calc(100vh - 100px);
     display: flex;
@@ -46,9 +69,9 @@
   }
 
   #heartwood::before {
-    background-image: -webkit-gradient(radial, center center, 0, center center, 220, from(transparent), to(#e6e8eb));
-    background-image: -webkit-radial-gradient(transparent, #e6e8eb);
-    background-image: radial-gradient(transparent, #e6e8eb);
+    background-image: -webkit-gradient(radial, center center, 0, center center, 220, from(transparent), to( var(--bright3) ));
+    background-image: -webkit-radial-gradient(transparent,  var(--bright3) );
+    background-image: radial-gradient(transparent,  var(--bright3) );
     position: absolute;
     display: block;
     width: 100%;

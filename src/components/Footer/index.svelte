@@ -14,7 +14,7 @@
 
 <style>
   footer {
-    background: #333751;
+    background: #07223C;
     height: 50vh;
     min-height: 400px;
     justify-content: center;
@@ -37,7 +37,7 @@
   }
 
   :global(footer path) {
-    fill: #788196;
+    fill: var(--teal2);
 /*    filter: blur(100px);*/
   }
 </style>
