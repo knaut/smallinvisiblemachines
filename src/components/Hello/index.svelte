@@ -8,6 +8,12 @@
   import Resume from '../Icons/resume.svelte'
   import Github from '../Icons/github.svelte'
 
+  import { active as resumeStore } from '../Resume/store.js'
+
+  function handleResumeClick() {
+    resumeStore.set(true)
+  }
+
   onMount(() => {
 
     const hello = document.getElementById('hello')
@@ -179,7 +185,7 @@
   <div id="calls-to-action">
     <ul>
       <li>
-        <a href="#">
+        <a href="#" on:click={handleResumeClick}>
           <span class="cta-inner-wrap">
             <span class="icon">
               <Resume/>

@@ -5,7 +5,9 @@
   import Footer from './components/Footer/index.svelte'
   import Resume from './components/Resume/index.svelte'  
 
-  // import { onMount } from 'svelte'
+  import { active as resumeActive } from './components/Resume/store.js'
+
+  console.log($resumeActive)
 </script>
 <div id="app">
   <Header/>
@@ -17,7 +19,9 @@
 
   </div>
   <Hello/>
-  <Resume/>
+  {#if $resumeActive}
+    <Resume/>
+  {/if}
   <Footer/>
 </div>
 <style>

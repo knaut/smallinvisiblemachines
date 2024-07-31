@@ -2,12 +2,18 @@
   import Markdown from 'svelte-markdown'
   import source from  './resume.md?raw'
 
-  
+  import { active as resumeStore } from './store.js'
+
+  function handleResumeClick() {
+    resumeStore.set(false)
+  }
+
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 <div id="resume">
+  <div id="resume-close" on:click={handleResumeClick}></div>
   <div id="resume-container">
     <article>
       <Markdown {source}/>
@@ -31,7 +37,6 @@
 
     z-index: 80;
 
-/*    padding: 6% 0 6%;*/
 
     box-sizing: border-box;
 
@@ -41,11 +46,8 @@
   }
 
   #resume-container {
-/*    background: #ddd;*/
 
-/*    max-width: 1000px;*/
     width: 100%; 
-/*    height: 100%;*/
 
     position: absolute;
 
@@ -72,6 +74,43 @@
 
   #resume-container > nav {
 /*    float*/
+  }
+
+  #resume-close {
+    height: 50px;
+    width: 50px;
+    border: 2px solid var(--gray);
+    border-radius: 100%;
+
+    position: absolute;
+    right: 60px;
+    top: 40px;
+
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 81;
+  }
+
+  #resume-close:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 25px;
+    background: #000;
+    right: 24px;
+    top: 12px;
+  }
+
+  #resume-close:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #000;
+    right: 12px;
+    top: 24px;
   }
 
   #resume {
