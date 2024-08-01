@@ -12,6 +12,9 @@
 
   function handleResumeClick() {
     resumeStore.set(true)
+    const app = document.getElementById('app-wrap')
+    app.classList.add('resume-active')
+    // console.log('resume active')
   }
 
   onMount(() => {
@@ -185,7 +188,7 @@
   <div id="calls-to-action">
     <ul>
       <li>
-        <a href="#" on:click={handleResumeClick}>
+        <a on:click={handleResumeClick}>
           <span class="cta-inner-wrap">
             <span class="icon">
               <Resume/>
@@ -379,8 +382,7 @@
   }
 
   #calls-to-action a {
-/*    display: flex;*/
-    
+    cursor: pointer;    
   }
 
   #calls-to-action .cta-inner-wrap {
@@ -393,7 +395,8 @@
     color: #fff;
   }
 
-  #calls-to-action a:link .cta-inner-wrap {
+  #calls-to-action a:link .cta-inner-wrap,
+  #calls-to-action a .cta-inner-wrap {
     position: relative;
     top: 0;
     transition: 0.25s all ease-in-out;

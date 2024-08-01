@@ -4,15 +4,20 @@
 
   import { active as resumeStore } from './store.js'
 
+  import { fade } from 'svelte/transition'
+
   function handleResumeClick() {
     resumeStore.set(false)
+    console.log($resumeStore)
+    const app = document.getElementById('app-wrap')
+    app.classList.remove('resume-active')
   }
 
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-<div id="resume">
+<div id="resume" >
   <div id="resume-close" on:click={handleResumeClick}></div>
   <div id="resume-container">
     <article>
@@ -26,7 +31,7 @@
 
 <style>
   #resume {
-    display: none;
+    
 
     background: var(--bright4);
     position: fixed;
@@ -43,7 +48,11 @@
     display: flex;
     justify-content: center;
     overflow-y: auto;
+
+    transition: 0.5s all ease-in-out;
   }
+
+  
 
   #resume-container {
 
@@ -146,4 +155,5 @@
     font-weight: bold;
     margin: 25px 0 0;
   }
+
 </style>

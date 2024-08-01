@@ -6,10 +6,11 @@
   import Resume from './components/Resume/index.svelte'  
 
   import { active as resumeActive } from './components/Resume/store.js'
+  import { fade } from 'svelte/transition'
 
   console.log($resumeActive)
 </script>
-<div id="app">
+<div id="app-wrap">
   <Header/>
 
   <div id="heartwood">
@@ -20,7 +21,7 @@
   </div>
   <Hello/>
   {#if $resumeActive}
-    <Resume/>
+    <div transition:fade style="position:relative; z-index: 82;"><Resume/></div>
   {/if}
   <Footer/>
 </div>
@@ -125,5 +126,22 @@
     opacity: 0;
     animation-fill-mode: forwards;
   }
+
+  @keyframes height {
+    from {
+      height: auto;
+    }
+    to {
+      height: 100vh;
+    }
+  }
+
+  :global(#app-wrap.resume-active) {
+    overflow: hidden;
+/*    height: 100vh;*/
+    animation-name: height;
+    animation-delay: 0.5s;
+  }
+
 
 </style>
