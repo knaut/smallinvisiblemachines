@@ -13,8 +13,10 @@
   function handleResumeClick() {
     resumeStore.set(true)
     const app = document.getElementById('app-wrap')
-    app.classList.add('resume-active')
-    // console.log('resume active')
+    setTimeout( () => {
+      app.classList.add('resume-active')  
+    }, 500)
+    
   }
 
   onMount(() => {
@@ -28,13 +30,11 @@
     window.addEventListener('scroll', e => {
       const winScroll = window.scrollY
 
-      // console.log(elHeight, winScroll)
 
       if (winScroll >= elHeight / 2 ) {
 
         if (hasRun === false) {
 
-          // console.log('animate')
 
 
           hasRun = true;

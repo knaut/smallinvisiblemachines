@@ -20,11 +20,13 @@
 
   </div>
   <Hello/>
-  {#if $resumeActive}
-    <div transition:fade style="position:relative; z-index: 82;"><Resume/></div>
-  {/if}
   <Footer/>
 </div>
+{#if $resumeActive}
+    <div transition:fade style="position:relative; z-index: 82;">
+      <Resume/>
+    </div>
+  {/if}
 <style>
   :root {
     --white: #fff;
@@ -138,6 +140,9 @@
 
   :global(#app-wrap.resume-active) {
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 /*    height: 100vh;*/
     animation-name: height;
     animation-delay: 0.5s;
