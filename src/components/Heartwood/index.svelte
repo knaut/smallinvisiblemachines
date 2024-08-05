@@ -341,26 +341,32 @@
   #skill-list {
     position: absolute;
     z-index: 51;
-    left: 70px;
-    top: 50px;
+    left: 50px;
+    top: 20px;
     list-style: none;
     padding: 0;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
   }
 
   #skill-list li {
-    display: block;
-    transform: rotate(-90deg);
-    width: 120px;
-    padding: 10px 0;
-    margin-left: -80px;
+    display: flex;
+/*    transform: rotate(-90deg);*/
+/*    width: 120px;*/
+    padding: 10px 0 0 30px;
+    margin-bottom: 10px;
+/*    margin-left: -80px;*/
     text-align: right;
     cursor: pointer;
     position: relative;
     color: #999;
     font-size: 16px;
+    text-align: left;
+
+    transition: padding 0.2s ease;
   }
 
   #skill-list li:before {
@@ -373,6 +379,7 @@
 
   #skill-list li:hover {
     color: orange;
+    padding-left: 45px;
   }
 
   #skill-list li:hover:before {
@@ -393,7 +400,7 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 3px;
     background-size: 20px 20px;
     background-position: center bottom;
   }
