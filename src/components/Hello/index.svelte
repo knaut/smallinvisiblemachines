@@ -419,4 +419,38 @@
     margin-left: 15px;
   }
 
+  @media (max-width: 620px) {
+    #hello {
+      padding: 9%;
+    }
+
+    :global(#hello-path) {
+      width: 50% !important;
+    }
+
+    :global(#hello-wrap) {
+      margin-bottom: 130px;
+    }
+
+    #hello p {
+      margin: 15px 0;
+    }
+
+    #hello img {
+      height: auto;
+      width: 75%;
+      right: 0 !important;
+      top: 0;
+      right: 9%;
+    }
+
+    #calls-to-action ul {
+      flex-direction: column;
+    }
+
+    #calls-to-action li {
+      margin-bottom: 20px;
+    }
+  }
+
 </style>

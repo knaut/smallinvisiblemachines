@@ -11,6 +11,14 @@
     const width = document.querySelector('body').clientWidth
     const breakpoint = 620
 
+    anime({
+      targets: '#divider',
+      width: '100%',
+      duration: 2000,
+      easing: 'easeInOutQuad',
+      delay: 1000
+    })
+
     if (width > breakpoint) {
       // desktop
       anime({
@@ -25,13 +33,7 @@
         delay: 1000
       })
 
-      anime({
-        targets: '#divider',
-        width: '100%',
-        duration: 2000,
-        easing: 'easeInOutQuad',
-        delay: 1000
-      })
+      
 
       anime({
         targets: '#typeface',
@@ -150,26 +152,23 @@
     #global {
       /* TODO: mobile implementation!
       should we add a mobile-style menu? is it needed? */
-      opacity: 0;
-      box-shadow: 0;
+/*      opacity: 0;*/
+/*      box-shadow: 0;*/
+
+      justify-content: center;
+    }
+
+    :global(#global .logo, #global #bubble-profile) {
+      display: none;
     }
 
     #divider {
-      opacity: 0;
+/*      opacity: 0;*/
+/*      display: none;*/
     }
+
   }
 
-
-/*    .test { background: #2965f1; }*/
-/*    .test { background: #cd669a; }*/
-/*    .test { background: #f06529; }*/
-/*    .test { background: #f0db4f; }*/
-/*    .test { background: #61dafb; }*/
-/*    .test { background: #ff3e00; }*/
-/*    .test { background: #0AEBA3; }*/
-/*    .test { background: #3178c6; }*/
-/*    .test { background: #8bc500; }*/
-/*    .test { background: #0AFDBA; }*/
   
 
 </style>

@@ -27,7 +27,7 @@ Profile
 
 - Skilled in developing real-time, cloud-driven applications for various SBCs (Raspberry Pi) and microcontrollers.
 
-- A big picture think who accounts for subtle details; loves to craft excellent user experience.
+- A big picture think who accounts for subtle details; loves to craft excellent user experiences.
 
 Skills
 ------
@@ -37,12 +37,12 @@ Employment
 ----------
 Freelance Web Developer - Small Invisible Machines - May 2024 to Present
 - Designed and developed data visualization applications using Svelte and D3. 
-- Developed chat-base NodeJS application leveraging on-demand video and livestreaming APIs. 
+- Developed NodeJS chatbot application integrating on-demand video and livestreaming APIs. 
 - Leveraged biosensors (EMG) in technical projects.
 
 Senior Web Developer (remote) - CAISO via TEKSystems - Nov 2023 to May 2024
-- Developed components in Angular and Typescript for application serving mission-critical documents to stakeholders.
-- Developed CSS framwork with Tailwind-like patterns in SCSS.
+- Developed components in Angular and Typescript for an application serving mission-critical documents to stakeholders.
+- Developed CSS framework with Tailwind-like patterns in SCSS.
 - Configured Storybook instances for scaffolding Svelte components.
 
 Lead Developer (remote) - Kyndryl - July 2022 to Nov 2023
@@ -52,7 +52,7 @@ Lead Developer (remote) - Kyndryl - July 2022 to Nov 2023
 
 Software Engineer (remote) - Expedia Group via Bluehawk - Oct 2020 to July 2022
 - Developed UIs for CCaaS (Contact-Center-as-a-Service) application for Expedia Group and subsidiary Vrbo using React, SCSS, Webpack.
-- Developed a data visualization of contact centers using geocoordinates.
+- Developed a data visualization of contact centers using geolocation API.
 - Prototyped user flows and from concept to code while including stakeholders.
 
 Senior Front-End Developer - Twitter - Sept 2019 to March 2020
@@ -72,8 +72,10 @@ Co-Founder & Lead Developer - Havyn - Jan 2016 to Oct 2018
 
 Education
 ---------
-Maryland Insitute College of Art\
-Painting Major, Creative Writing Minor\
+Maryland Insitute College of Art
+
+Painting Major, Creative Writing Minor
+
 2006-2008
 
 Achievements

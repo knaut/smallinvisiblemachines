@@ -42,7 +42,7 @@
   }
 
   #footer-logo {
-    margin-top: -140px;
+    margin-top: -160px;
     width: 200px;
   }
 
@@ -69,6 +69,8 @@
     position: absolute;
     bottom:0;
     padding: 50px;
+    box-sizing: border-box;
+    text-align: center;
     border-top: 5px solid var(--teal2);
     box-shadow: 0 -2px 16px var(--dark1);
 

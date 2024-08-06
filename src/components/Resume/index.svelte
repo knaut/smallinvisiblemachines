@@ -8,7 +8,6 @@
 
   function handleResumeClick() {
     resumeStore.set(false)
-    console.log($resumeStore)
     const app = document.getElementById('app-wrap')
     app.classList.remove('resume-active')
   }
@@ -24,15 +23,15 @@
       <Markdown {source}/>
     </article>
     <nav>
-      nav col
+      <a href='/resume.pdf'>Download PDF</a>
+      <a href='/resume.doc'>Download DOC</a>
+      <a href='/resume.md'>Download Markdown</a>
     </nav>
   </div>
 </div>
 
 <style>
   #resume {
-    
-
     background: var(--bright4);
     position: fixed;
     top: 0;
@@ -52,7 +51,7 @@
     transition: 0.5s all ease-in-out;
   }
 
-  
+
 
   #resume-container {
 
@@ -83,7 +82,46 @@
 
   #resume-container > nav {
 /*    float*/
+    display: flex;
+    flex-direction: column;
   }
+
+  #resume-container > nav a:link {
+    color: var(--dark4);
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s all ease;
+    position: relative;
+  }
+
+  #resume-container > nav a:link:before {
+    content: '>';
+    display: block;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: -40px;
+    opacity: 0;
+  }
+
+  #resume-container > nav a:hover:before {
+    left: -20px;
+    opacity: 1;
+  }
+
+  #resume-container > nav a:visited {
+    color: var(--dark4);
+  }
+
+  #resume-container > nav a:hover {
+    color: var(--teal3);
+  }
+
+  #resume-container > nav a:active {
+    color: var(--teal2);
+  }
+
+  
 
   #resume-close {
     height: 50px;
