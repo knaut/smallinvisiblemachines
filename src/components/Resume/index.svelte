@@ -24,7 +24,7 @@
     </article>
     <nav>
       <a href='/resume.pdf'>Download PDF</a>
-      <a href='/resume.doc'>Download DOC</a>
+      <a href='/resume.docx'>Download DOC</a>
       <a href='/resume.md'>Download Markdown</a>
     </nav>
   </div>
