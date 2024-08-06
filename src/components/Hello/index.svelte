@@ -444,6 +444,10 @@
       right: 9%;
     }
 
+    #calls-to-action {
+      float: none;
+    }
+
     #calls-to-action ul {
       flex-direction: column;
     }

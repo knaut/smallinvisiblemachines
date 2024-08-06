@@ -90,4 +90,11 @@
     margin-bottom: 25px;
   }
 
+  @media (max-width: 620px) {
+    :global(footer .logo) {
+      width: 200px;
+      margin-top: -35px;
+    }
+  }
+
 </style>
