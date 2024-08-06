@@ -27,7 +27,7 @@ Profile
 
 - Skilled in developing real-time, cloud-driven applications for various SBCs (Raspberry Pi) and microcontrollers.
 
-- A big picture think who accounts for subtle details; loves to craft excellent user experiences.
+- A big picture thinker who accounts for subtle details; loves to craft excellent user experiences.
 
 Skills
 ------
