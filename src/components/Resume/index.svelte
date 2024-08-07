@@ -221,7 +221,7 @@
 
 
     :global(#resume p), :global(#resume li) {
-      font-size: 10px;
+      font-size: 12px;
     }
 
   }
