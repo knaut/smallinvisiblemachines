@@ -69,7 +69,7 @@
   }
 
   #resume-container > article {
-    width: 1000px;
+    max-width: 1000px;
   }
 
   :global(#resume-container > article #daniel-a-anderson + hr + p),
@@ -192,6 +192,38 @@
   :global(#resume p) {
     font-weight: bold;
     margin: 25px 0 0;
+  }
+
+  @media (max-width: 620px) {
+
+    #resume-close {
+      top: 7px;
+      right: 20px;
+      height: 40px;
+      width: 40px;
+    }
+
+    #resume-close:before {
+      right: 19px;
+      top: 8px;
+    }
+
+    #resume-close:after {
+      right: 8px;
+      top: 19px;
+    }
+
+    #resume-container {
+      padding-top: 55px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+
+    :global(#resume p), :global(#resume li) {
+      font-size: 10px;
+    }
+
   }
 
 </style>
