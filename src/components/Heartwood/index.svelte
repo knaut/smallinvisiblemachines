@@ -22,17 +22,6 @@
     transform( clientX, clientY, target )
   }
 
-  /*
-  const colors = {
-    CSS: '#012030',
-    HTML: '#13678A',
-    JS: '#45C4B0',
-    React: '#E8EB85',
-    Svelte: '#9AEBA3',
-    Rust: '#DAFDBA',
-    TypeScript: '#DAFDBA',
-
-  }*/
 
   const colors = {
     CSS: '#2965f1',
@@ -41,7 +30,6 @@
     Javascript: '#f0db4f',
     React: '#61dafb',
     Svelte: '#ff3e00',
-    // Angular: '#0AEBA3',
     TypeScript: '#3178c6',
     NodeJS: '#8bc500',
     Storybook: '#ff4785',
@@ -49,15 +37,15 @@
 
   const skills = {
   '2024': [
-    { skill: 'CSS', duration: [0, 7] },
-    { skill: 'HTML', duration: [0, 7] },
-    { skill: 'Javascript', duration: [0, 7] },
+    { skill: 'CSS', duration: [0, 8] },
+    { skill: 'HTML', duration: [0, 8] },
+    { skill: 'Javascript', duration: [0, 8] },
     { skill: 'SCSS', duration: [0, 5] },
-    { skill: 'NodeJS', duration: [0, 7] },
-    { skill: 'React', duration: [0,5] },
-    { skill: 'Storybook', duration: [[0, 4], [5, 7]] },
-    { skill: 'Svelte', duration: [[0, 5], [6, 7]] },
-    { skill: 'TypeScript', duration: [[0, 5], [6, 7]] },
+    { skill: 'NodeJS', duration: [0, 8] },
+    { skill: 'React', duration: [0, 5] },
+    { skill: 'Storybook', duration: [[0, 4], [5, 8]] },
+    { skill: 'Svelte', duration: [[0, 5], [6, 8]] },
+    { skill: 'TypeScript', duration: [[0, 5], [6, 8]] },
   ],
   '2023': [
     { skill: 'CSS', duration: [0, 12] },
@@ -89,49 +77,6 @@
     
   ]
 }
-
-  /*
-  const skills = {
-    '2025': [
-      { skill: 'CSS', duration: [0, 11] },
-      { skill: 'HTML', duration: [4, 12] },
-      { skill: 'JS', duration: [[6, 9], [11, 12]] },
-      { skill: 'React', duration: [[1, 5], [7,11]] },
-      { skill: 'Svelte', duration: [0, 11] },
-      { skill: 'Rust', duration: [[2, 3], [5,6]] },
-      { skill: 'TypeScript', duration: [[9, 10], [11,11.5]] },
-      
-    ],
-    '2024': [
-      { skill: 'CSS', duration: [0, 12] },
-      { skill: 'HTML', duration: [0, 12] },
-      { skill: 'JS', duration: [[0, 12], [11, 12]] },
-      { skill: 'React', duration: [11, 12] },
-      { skill: 'Svelte', duration: [[2, 4], [8, 9]] },
-      { skill: 'Rust', duration: [1, 2] },
-      { skill: 'TypeScript', duration: [3, 7] },
-      
-    ],
-    '2023': [
-      { skill: 'CSS', duration: [7, 12] },
-      { skill: 'HTML', duration: [4, 8] },
-      { skill: 'JS', duration: [11, 12] },
-      { skill: 'React', duration: [1, 2] },
-      { skill: 'Svelte', duration: [[2, 4], [8, 9], [11, 12]] },
-      { skill: 'Rust', duration: [6, 7] },
-      { skill: 'TypeScript', duration: [4, 9] },
-      
-    ],
-    '2022': [
-      { skill: 'CSS', duration: [1, 12] },
-      { skill: 'HTML', duration: [1, 2] },
-      { skill: 'JS', duration: [[11, 12], [2, 3]] },
-      { skill: 'Svelte', duration: [[2, 4], [8, 9], [11, 12]] },
-      { skill: 'Rust', duration: [6, 7] },
-      { skill: 'TypeScript', duration: [4, 9] },
-    ]
-  }
-  */
 
 
   function gatherSkillList(skillsObj) {
@@ -239,13 +184,13 @@
     <li id="{skill}"
       on:mouseenter={e => {
         // console.log(e.target, skill)
-        d3.selectAll(`path.${skill}`)
-          .attr('fill', 'orange')
+        d3.selectAll(`path:not(.${skill})`)
+          .classed('hovered', true)
       }}
       on:mouseleave={e => {
         // console.log(e.target, skill)
-        d3.selectAll(`path.${skill}`)
-          .attr('fill', colors[skill])
+        d3.selectAll(`path:not(.${skill})`)
+          .classed('hovered', false)
       }}
     >
       {skill}
@@ -309,6 +254,15 @@
     z-index: 1;
   }
 
+  :global(svg[id^="year"] path) {
+/*    fill: red !important;*/
+    transition: 0.8s all ease-in-out;
+  }
+
+  :global(svg[id^="year"] path.hovered) {
+    opacity: .2;
+  }
+
   .svg-wrapper {
     position: absolute;
     width: 100vh; /* set to vw to expand to full-width below the fold */
@@ -319,7 +273,12 @@
     position: absolute;
     top: 125px;
     left: 0;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
+
+
 
   .container {
     height: 100vh;
@@ -356,8 +315,8 @@
     display: flex;
 /*    transform: rotate(-90deg);*/
 /*    width: 120px;*/
-    padding: 10px 0 0 30px;
-    margin-bottom: 10px;
+    padding: 15px 0 15px 30px;
+/*    margin-bottom: 10px;*/
 /*    margin-left: -80px;*/
     text-align: right;
     cursor: pointer;
@@ -389,7 +348,7 @@
   }
 
   :global(#heartwood path) {
-    transition: 0.2s fill ease-in-out;
+    transition: 0.4s all ease-in-out;
   }
 
 
@@ -400,7 +359,7 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 3px;
+    top: 8px;
     background-size: 20px 20px;
     background-position: center bottom;
   }
