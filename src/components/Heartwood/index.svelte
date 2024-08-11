@@ -36,47 +36,48 @@
   }
 
   const skills = {
-  '2024': [
-    { skill: 'CSS', duration: [0, 8] },
-    { skill: 'HTML', duration: [0, 8] },
-    { skill: 'Javascript', duration: [0, 8] },
-    { skill: 'SCSS', duration: [0, 5] },
-    { skill: 'NodeJS', duration: [0, 8] },
-    { skill: 'React', duration: [0, 5] },
-    { skill: 'Storybook', duration: [[0, 4], [5, 8]] },
-    { skill: 'Svelte', duration: [[0, 5], [6, 8]] },
-    { skill: 'TypeScript', duration: [[0, 5], [6, 8]] },
-  ],
-  '2023': [
-    { skill: 'CSS', duration: [0, 12] },
-    { skill: 'HTML', duration: [0, 12] },
-    { skill: 'Javascript', duration: [0, 12] },
-    { skill: 'SCSS', duration: [0, 8] },
-    { skill: 'NodeJS', duration: [7, 12] },
-    { skill: 'React', duration: [0, 11] },
-    { skill: 'Storybook', duration: [0, 6] },
-    { skill: 'Svelte', duration: [8, 11] },
-    { skill: 'TypeScript', duration: [7, 12] },
-  ],
-  '2022': [
-    { skill: 'CSS', duration: [0, 12] },
-    { skill: 'HTML', duration: [0, 12] },
-    { skill: 'Javascript', duration: [0, 12] },
-    { skill: 'SCSS', duration: [0, 7] },
-    { skill: 'NodeJS', duration: [0, 12] },
-    { skill: 'React', duration: [0, 11] },
-    { skill: 'Storybook', duration: [7, 12] },
-  ],
-  '2021': [
-    { skill: 'CSS', duration: [0, 12] },
-    { skill: 'HTML', duration: [0, 12] },
-    { skill: 'Javascript', duration: [0, 12] },
-    { skill: 'SCSS', duration: [0, 12] },
-    { skill: 'NodeJS', duration: [0, 12] },
-    { skill: 'React', duration: [0, 12] },
-    
-  ]
-}
+    '2024': [
+      { skill: 'CSS', duration: [0, 8] },
+      { skill: 'HTML', duration: [0, 8] },
+      { skill: 'Javascript', duration: [0, 8] },
+      { skill: 'SCSS', duration: [0, 5] },
+      { skill: 'NodeJS', duration: [0, 8] },
+      { skill: 'React', duration: [0, 5] },
+      { skill: 'Storybook', duration: [[0, 4], [5, 8]] },
+      { skill: 'Svelte', duration: [[0, 5], [6, 8]] },
+      { skill: 'TypeScript', duration: [[0, 5], [6, 8]] },
+    ],
+    '2023': [
+      { skill: 'CSS', duration: [0, 12] },
+      { skill: 'HTML', duration: [0, 12] },
+      { skill: 'Javascript', duration: [0, 12] },
+      { skill: 'SCSS', duration: [0, 8] },
+      { skill: 'NodeJS', duration: [7, 12] },
+      { skill: 'React', duration: [0, 11] },
+      { skill: 'Storybook', duration: [0, 6] },
+      { skill: 'Svelte', duration: [8, 11] },
+      { skill: 'TypeScript', duration: [7, 12] },
+    ],
+    '2022': [
+      { skill: 'CSS', duration: [0, 12] },
+      { skill: 'HTML', duration: [0, 12] },
+      { skill: 'Javascript', duration: [0, 12] },
+      { skill: 'SCSS', duration: [0, 7] },
+      { skill: 'NodeJS', duration: [0, 12] },
+      { skill: 'React', duration: [0, 11] },
+      { skill: 'Storybook', duration: [7, 12] },
+    ],
+    '2021': [
+      { skill: 'CSS', duration: [0, 12] },
+      { skill: 'HTML', duration: [0, 12] },
+      { skill: 'Javascript', duration: [0, 12] },
+      { skill: 'SCSS', duration: [0, 12] },
+      { skill: 'NodeJS', duration: [0, 12] },
+      { skill: 'React', duration: [0, 12] },   
+    ]
+  }
+
+
 
 
   function gatherSkillList(skillsObj) {
@@ -91,10 +92,8 @@
         if (skillList.indexOf(skill) === -1) {
           skillList.push(skill)
         }
-
       }
     }
-
     return skillList
   }
 
@@ -103,15 +102,12 @@
   onMount(() => {
 
     for (let yearKey in skills) {
-
       const skillData = skills[yearKey]
 
       for (let i = 0; skillData.length > i; i++) {
-
         const { skill, duration, fill } = skillData[i]
 
         if (Array.isArray(duration[0])) {
-
           for (let c = 0; duration.length > c; c++) {
 
             d3.select(`#year${yearKey}-${i + 1}-${c + 1}`)
@@ -184,12 +180,12 @@
     <li id="{skill}"
       on:mouseenter={e => {
         // console.log(e.target, skill)
-        d3.selectAll(`path:not(.${skill})`)
+        d3.selectAll(`svg[id^="year"] path:not(.${skill})`)
           .classed('hovered', true)
       }}
       on:mouseleave={e => {
         // console.log(e.target, skill)
-        d3.selectAll(`path:not(.${skill})`)
+        d3.selectAll(`svg[id^="year"] path:not(.${skill})`)
           .classed('hovered', false)
       }}
     >
@@ -263,6 +259,10 @@
     opacity: .2;
   }
 
+  :global(svg[id^="year"] path.active) {
+    opacity: .2;
+  }
+
   .svg-wrapper {
     position: absolute;
     width: 100vh; /* set to vw to expand to full-width below the fold */
@@ -273,12 +273,11 @@
     position: absolute;
     top: 125px;
     left: 0;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     letter-spacing: 1px;
+    font-family: 'Roboto Mono', monospace;
   }
-
-
 
   .container {
     height: 100vh;
@@ -304,7 +303,7 @@
     top: 20px;
     list-style: none;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     justify-content: center;
     flex-direction: column;

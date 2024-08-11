@@ -248,13 +248,26 @@
     position: relative;
   }
 
+  @media (max-width: 1400px) {
+    #hello img {
+      top: 0% !important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    #hello img {
+      right: 2% !important;
+      height: 400px !important;
+    }
+  }
+
   #hello img {
 /*    float: right;*/
     position: absolute;
     top: 4.5%;
-    right: 18%;
+    right: 12%;
     z-index: 54;
-    height: 500px;
+    height: 480px;
 /*    border-radius: 100%;*/
     clip-path: circle(40%);
     z-index: 2;
@@ -264,10 +277,14 @@
   }
 
   #hello p {
-    margin: 30px 0 30px;
+    margin: 42px 0 42px;
     position: relative;
     display: inline-block;
     overflow: hidden;
+  }
+
+  #hello #hello-text > div:first-child p {
+    max-width: 60%;
   }
 
   #hello-text {
@@ -279,8 +296,9 @@
 
   .hello-text-inline {
     color: #fff;
-    font-family: serif;
-    font-size: 24px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 21px;
+    letter-spacing: -1px;
 
     position: relative;
 
@@ -368,10 +386,10 @@
   #calls-to-action li {
     list-style: none;
 
-    font-family: serif;
+    font-family: 'Roboto Mono', monospace;
 /*    text-transform: capitalize;*/
     font-style: italic;
-    font-size: 21px;
+    font-size: 14px;
     margin-right: 30px;
 
     opacity: 0;
@@ -419,6 +437,17 @@
     margin-left: 15px;
   }
 
+  @media (max-width: 1000px) {
+    #hello img {
+      height: 400px;
+
+    }
+
+    :global(#hello-path) {
+      width: 80% !important;
+    }
+  }
+
   @media (max-width: 620px) {
     #hello {
       padding: 9%;
@@ -454,6 +483,10 @@
 
     #calls-to-action li {
       margin-bottom: 20px;
+    }
+
+    #hello #hello-text > div:first-child p {
+      max-width: 70%;
     }
   }
 
