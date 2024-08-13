@@ -60,7 +60,12 @@
     <Typeface/>
     <h2>Daniel A. Anderson</h2>
   </div>
-  <img id="bubble-profile" src="{profile}" alt="Daniel Anderson"/>
+  <img id="bubble-profile" src="{profile}" alt="Daniel Anderson" on:click={e => {
+
+    const hello = document.getElementById("hello")
+    hello.scrollIntoView({ behavior: 'smooth' })  
+
+  }}/>
 </header>
 <div id="divider"></div>
 
@@ -73,6 +78,8 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
   }
+
+
 
   #global {
     height: 100px;
@@ -114,6 +121,15 @@
     border-radius: 100%;
     position: relative;
     left: 150px;
+    transition: border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, filter 0.2s ease-in-out;
+
+    box-shadow: 0;
+  }
+
+  #bubble-profile:hover {
+    border-color: #61dafb;
+    box-shadow: 0 0 10px #61dafb;
+    cursor: pointer;
   }
 
   #divider {
