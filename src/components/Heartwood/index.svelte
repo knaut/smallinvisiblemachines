@@ -33,9 +33,22 @@
     TypeScript: '#3178c6',
     NodeJS: '#8bc500',
     Storybook: '#ff4785',
+    "AI/Agentic": '#000',
   }
 
   const skills = {
+    '2025': [
+      { skill: 'CSS', duration: [0, 12] },
+      { skill: 'HTML', duration: [0, 12] },
+      { skill: 'Javascript', duration: [0, 12] },
+      // { skill: 'SCSS', duration: [0, 5] },
+      { skill: 'NodeJS', duration: [0, 12] },
+      { skill: 'React', duration: [0, 12] },
+      { skill: 'Storybook', duration: [0, 12] },
+      // { skill: 'Svelte', duration: [11, 12] },
+      { skill: 'TypeScript', duration: [0, 12] },
+      { skill: 'AI/Agentic', duration: [0, 12] },
+    ],
     '2024': [
       { skill: 'CSS', duration: [0, 8] },
       { skill: 'HTML', duration: [0, 8] },
@@ -46,6 +59,7 @@
       { skill: 'Storybook', duration: [[0, 4], [5, 8]] },
       { skill: 'Svelte', duration: [[0, 5], [6, 8]] },
       { skill: 'TypeScript', duration: [[0, 5], [6, 8]] },
+      { skill: 'AI/Agentic', duration: [10, 12] },
     ],
     '2023': [
       { skill: 'CSS', duration: [0, 12] },
@@ -107,6 +121,8 @@
       for (let i = 0; skillData.length > i; i++) {
         const { skill, duration, fill } = skillData[i]
 
+
+
         if (Array.isArray(duration[0])) {
           for (let c = 0; duration.length > c; c++) {
 
@@ -124,6 +140,8 @@
               .innerRadius((i + 1 / (i + 1.1)) * 28)
               .outerRadius((i + 1 / (i + 1)) * 31);
 
+              console.log('onMount', skill)
+
             d3.select(`#year${yearKey}-${i + 1}-${c + 1} g`)
               .selectAll('path')
               .data(data)
@@ -132,8 +150,6 @@
               .attr('d', arcGen)
               .attr('fill', colors[skill])
               .attr('class', skill)
-              // .attr('stroke-width', 1)
-              // .attr('stroke', '#ddd')
             
           }
 
@@ -151,7 +167,7 @@
           
           const arcGen = d3.arc()
             .innerRadius((i + 1 / (i + 1.1)) * 28)
-            .outerRadius((i + 1 / (i + 1)) * 31);
+            .outerRadius((i + 1 / (i + 1)) * 30);
           
           d3.select(`#year${yearKey}-${i + 1} g`)
             .selectAll('path')
@@ -161,8 +177,6 @@
             .attr('d', arcGen)
             .attr('fill', colors[skill])
             .attr('class', skill)
-            // .attr('stroke-width', 1)
-            // .attr('stroke', '#ddd')
 
         }
 
@@ -179,14 +193,16 @@
   {#each skillList as skill, i}
     <li id="{skill}"
       on:mouseenter={e => {
-        // console.log(e.target, skill)
-        d3.selectAll(`svg[id^="year"] path:not(.${skill})`)
+        d3.selectAll(`svg[id^="year"] path:not([class="${skill}"])`)
           .classed('hovered', true)
+
+        d3.selectAll('.svg-wrapper').classed('hovered', true)
       }}
       on:mouseleave={e => {
-        // console.log(e.target, skill)
-        d3.selectAll(`svg[id^="year"] path:not(.${skill})`)
+        d3.selectAll(`svg[id^="year"] path:not([class="${skill}"])`)
           .classed('hovered', false)
+
+        d3.selectAll('.svg-wrapper').classed('hovered', false)
       }}
     >
       {skill}
@@ -269,6 +285,13 @@
     height: 100vh;
   }
 
+  /* 
+  :global(.svg-wrapper.hovered) {
+    opacity: 1 !important;
+    background: red !important;
+  }
+  */
+
   .svg-label {
     position: absolute;
     top: 125px;
@@ -312,7 +335,7 @@
 
   #skill-list li {
     display: flex;
-/*    transform: rotate(-90deg);*/
+/*    transform: rotate(-90deg);
 /*    width: 120px;*/
     padding: 15px 0 15px 30px;
 /*    margin-bottom: 10px;*/
@@ -397,6 +420,10 @@
 
   #Storybook:after {
     background: url(./icons/storybook.svg) no-repeat;
+  }
+
+  li[id="AI/Agentic"]:after {
+    background: url(./icons/ai-icon.png) no-repeat;
   }
 
 
