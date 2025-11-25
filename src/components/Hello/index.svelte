@@ -167,19 +167,19 @@
   <div id="hello-text">
     <div>
       <p>
-        <span class="hello-text-inline">I'm Daniel, a web developer with over a decade of experience.</span>
+        <span class="hello-text-inline text-hilight">I'm <span class="text-hilight-blue">Daniel</span>, a <span class="text-hilight-yellow">web developer</span> with over a <span class="text-hilight-orange">decade</span> of experience.</span>
         <span id="first" class="hello-text-bg"></span>
       </p>
     </div>
     <div>
       <p>
-        <span class="hello-text-inline">I've worked with companies small and large, and love to push the boundaries of what's possible on the web.</span>
+        <span class="hello-text-inline text-hilight">I've <span class="text-hilight-green">worked</span> with companies small and large, and love to push the <span class="text-hilight-red">boundaries</span> of what's <span class="text-hilight-blue">possible</span> on the web.</span>
         <span id="second" class="hello-text-bg"></span>
       </p>
     </div>
     <div>
       <p>
-        <span class="hello-text-inline">Let's build something amazing together!</span>
+        <span class="hello-text-inline text-hilight">Let's <span class="text-hilight-blue">build</span> something <span class="text-hilight-green">amazing</span> together!</span>
         <span id="third" class="hello-text-bg"></span>
       </p>
     </div>
@@ -466,7 +466,7 @@
     }
 
     #hello img {
-      height: auto;
+      height: 75%;
       width: 75%;
       right: 0 !important;
       top: 0;
@@ -488,6 +488,30 @@
     #hello #hello-text > div:first-child p {
       max-width: 70%;
     }
+  }
+
+  .text-hilight {
+    color: rgb(252,252,250);
+  }
+
+  .text-hilight-red {
+    color: rgb(252,96,134);
+  }
+
+  .text-hilight-green {
+    color: rgb(168,219,117);
+  }
+
+  .text-hilight-blue {
+    color: rgb(115,208,220);
+  }
+
+  .text-hilight-yellow {
+    color: rgb(254,215,101);
+  }
+
+  .text-hilight-orange {
+    color: rgb(252,152,103);
   }
 
 </style>

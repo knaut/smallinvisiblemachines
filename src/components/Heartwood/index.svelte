@@ -140,7 +140,6 @@
               .innerRadius((i + 1 / (i + 1.1)) * 28)
               .outerRadius((i + 1 / (i + 1)) * 31);
 
-              console.log('onMount', skill)
 
             d3.select(`#year${yearKey}-${i + 1}-${c + 1} g`)
               .selectAll('path')
