@@ -17,43 +17,45 @@ www.github.com/knaut
 
 Profile
 -------
-- Full-stack web developer of 15 years' experience. Core skills include Javascript/ECMAScript, Typescript, NodeJS, CSS, CSS Pre-processors, HTML, and a variety of libraries and frameworks for front-end and back-end applications.
+- Full-stack web developer of 15 years' experience with strong UX eye. Core skills include Typescript/Javascript, Node.js, CSS & Tailwind et al., HTML, and a breadth of frameworks for frontend and backend solutions.
 
-- Front-end framework skillset includes React, Svelte, Angular, and various styling patterns such as CSS-in-JS, Tailwind, and Sass/SCSS. Data visualization and animation skills include D3 and Anime.
+- Front-end framework skills include React, Svelte, Angular; styling patterns include Tailwind, CSS-in-JS, SCSS/Sass; data visualization and animation skills includes D3, Anime.js, Motion.
 
-- Back-end framework skillset includes NextJS, Express, Koa, and Hapi. Database experience includes MongoDB, Redis, SQL.
+- Back-end framework skillset includes Next.js, Remix, Express, Koa, and Hapi. Database experience includes MongoDB, Redis, SQL.
 
-- Strong background in user experience design and prototyping tools such as Storybook, Balsamiq Mockups, and Adobe Photoshop.
-
-- Skilled in developing real-time, cloud-driven applications for various SBCs (Raspberry Pi) and microcontrollers.
+- Skilled in developing real-time, cloud-driven applications for web UIs across the the stack.
 
 - A big picture thinker who accounts for subtle details; loves to craft excellent user experiences.
 
 Skills
 ------
-Javascript, NodeJS and ecosystem, Typescript, React, Svelte, Angular, Redux, CSS, SCSS, CSS-in-JS, Tailwind, Storybook, NextJS, Express, Koa, Hapi, Websockets, Redis, MongoDB, SQL, Amazon Web Services, Google Cloud, Heroku, MacOS, Windows, Linux, Adobe Creative Cloud (Photoshop, AfterEffects, Premiere), Balsamiq Mockups, Chrome extensions, responsive design, decentralized applications.
+Typescript, Javascript, Node.js and ecosystem, React, React Flow, TanStack Query, Svelte, Angular, Redux, Zustand, CSS, SCSS, CSS-in-JS, Tailwind, Storybook, NextJS, Remix, Express, Koa, Hapi, WebSockets, Redis, MongoDB, SQL, Amazon Web Services, Google Cloud, Heroku, MacOS, Windows, Linux, Adobe Creative Cloud (Photoshop, After Effects, Premiere), Balsamiq Mockups, Figma, Chrome extensions, responsive design, decentralized applications, agentic workflows & AI-powered UIs.
 
 Employment
 ----------
-Freelance Web Developer - Small Invisible Machines - May 2024 to Present
-- Designed and developed data visualization applications using Svelte and D3. 
-- Developed NodeJS chatbot application integrating on-demand video and livestreaming APIs. 
-- Leveraged biosensors (EMG) in technical projects.
+Senior Product Engineer - Summation - Sept 2024 to Jan 2026
+- Spearheaded initial UI for AI-powered financial analysis platform in pre-go-to-market phase.
+- Leveraged advanced libraries like React Flow, React DnD, Zustand, and TanStack Query.
+- Worked alongside C-suite and founding designers to deliver post-launch UX in a leading role.
+
+Freelance Web Developer - Small Invisible Machines - May 2024 to Sept 2024
+- Designed and developed data visualization applications using Svelte and D3.
+- Developed chatbot in NodeJS integrating on-demand video and streaming platform APIs.
+- Leveraged electromyographic biosensors (EMG) in technical visualization projects.
 
 Senior Web Developer (remote) - CAISO via TEKSystems - Nov 2023 to May 2024
-- Developed components in Angular and Typescript for an application serving mission-critical documents to stakeholders.
-- Developed CSS framework with Tailwind-like patterns in SCSS.
-- Configured Storybook instances for scaffolding Svelte components.
+- Developed front-end components using Angular, Tailwind, Svelte, and Storybook.
+- Developed bespoke Tailwind-like library in-house using SCSS.
 
 Lead Developer (remote) - Kyndryl - July 2022 to Nov 2023
 - Developed customer-facing UIs for an enterprise cloud service using React, Svelte, and Typescript.
 - Implemented pixel-perfect designs from Figma using SCSS and CSS Modules.
-- Unit-tested critical business logic for a NextJS application.
+- Unit-tested critical business logic for platform in Next.js.
 
 Software Engineer (remote) - Expedia Group via Bluehawk - Oct 2020 to July 2022
-- Developed UIs for CCaaS (Contact-Center-as-a-Service) application for Expedia Group and subsidiary Vrbo using React, SCSS, Webpack.
-- Developed a data visualization of contact centers using geolocation API.
-- Prototyped user flows and from concept to code while including stakeholders.
+- Developed UIs for CCaaS (Contact-Center-as-a-Service) application for Expedia Group/Vrbo.
+- Developed interactive visualization of contact centers using geolocation APIs in React.
+- Prototyped user flows from concept to low-code to code through iteration with stakeholders.
 
 Senior Front-End Developer - Twitter - Sept 2019 to March 2020
 - Developed single-page applications using React, Redux, and Webpack for the Salesforce Lightning platform.
