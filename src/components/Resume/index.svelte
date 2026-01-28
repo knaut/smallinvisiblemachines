@@ -4,8 +4,6 @@
 
   import { active as resumeStore } from './store.js'
 
-  import { fade } from 'svelte/transition'
-
   function handleResumeClick() {
     resumeStore.set(false)
     const app = document.getElementById('app-wrap')

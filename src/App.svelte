@@ -6,6 +6,7 @@
   import Resume from './components/Resume/index.svelte'  
 
   import { active as resumeActive } from './components/Resume/store.js'
+  import { fade } from 'svelte/transition'
 </script>
 <div id="app-wrap">
   <Header/>
