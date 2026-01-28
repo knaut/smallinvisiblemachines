@@ -274,6 +274,8 @@
     opacity: 0;
     filter: blur(20px);
     margin-top: -100px;
+    object-fit: cover;
+    object-position: center;
   }
 
   #hello p {
