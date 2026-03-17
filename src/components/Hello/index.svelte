@@ -240,7 +240,8 @@
   }
   
   #hello {
-    min-height: 100vh;
+    min-height: 850px;
+
     width: 100%;
     background: var(--dark2);
     padding: 9% 18% 0 18%;

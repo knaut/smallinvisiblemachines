@@ -32,6 +32,7 @@
     border-top: 5px solid var(--teal2);
 /*    border-bottom: 5px solid var(--teal2);*/
     box-shadow: inset 0 10px 26px var(--dark4);
+    width: 100%;
   }
 
   footer div {
